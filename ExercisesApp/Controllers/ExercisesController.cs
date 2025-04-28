@@ -1,61 +1,53 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ExercisesApp.Data;
 using ExercisesApp.Models;
 
 namespace ExercisesApp.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class ExercisesController : ControllerBase
     {
-        private static List<Exercise> exercises = new List<Exercise>();
+        private readonly AppDbContext _context;
+
+        public ExercisesController(AppDbContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Exercise>> GetAll()
+        public async Task<ActionResult<IEnumerable<Exercise>>> GetExercises()
         {
+            var exercises = await _context.Exercises.ToListAsync();
             return Ok(exercises);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<Exercise> GetById(int id)
+        [HttpPost]
+        public async Task<ActionResult<Exercise>> CreateExercise(Exercise exercise)
         {
-            var exercise = exercises.FirstOrDefault(e => e.Id == id);
+            if (exercise.Name == null || exercise.Category < 0 || exercise.Date == null)
+            {
+                return BadRequest("Brak wymaganych danych.");
+            }
+
+            _context.Exercises.Add(exercise);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetExerciseById), new { id = exercise.Id }, exercise);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Exercise>> GetExerciseById(int id)
+        {
+            var exercise = await _context.Exercises.FindAsync(id);
+
             if (exercise == null)
+            {
                 return NotFound();
+            }
 
             return Ok(exercise);
-        }
-
-        [HttpPost]
-        public ActionResult<Exercise> Create(Exercise exercise)
-        {
-            exercise.Id = exercises.Count > 0 ? exercises.Max(e => e.Id) + 1 : 1;
-            exercises.Add(exercise);
-            return CreatedAtAction(nameof(GetById), new { id = exercise.Id }, exercise);
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Update(int id, Exercise updatedExercise)
-        {
-            var exercise = exercises.FirstOrDefault(e => e.Id == id);
-            if (exercise == null)
-                return NotFound();
-
-            exercise.Name = updatedExercise.Name;
-            exercise.Category = updatedExercise.Category;
-            exercise.Date = updatedExercise.Date;
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
-        {
-            var exercise = exercises.FirstOrDefault(e => e.Id == id);
-            if (exercise == null)
-                return NotFound();
-
-            exercises.Remove(exercise);
-            return NoContent();
         }
     }
 }
