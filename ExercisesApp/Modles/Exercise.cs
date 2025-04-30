@@ -10,6 +10,8 @@ namespace ExercisesApp.Models
 
         public int Reps { get; set; }
 
+        public int Weight { get; set; } 
+
         public int Sets { get; set; }
         public DateTime Date { get; set; }
     }

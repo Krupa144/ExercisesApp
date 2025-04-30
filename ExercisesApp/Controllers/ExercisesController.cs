@@ -49,5 +49,66 @@ namespace ExercisesApp.Controllers
 
             return Ok(exercise);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateExercise(int id, Exercise exercise)
+        {
+            if (id != exercise.Id)
+            {
+                return BadRequest("ID ćwiczenia nie zgadza się.");
+            }
+
+            var existingExercise = await _context.Exercises.FindAsync(id);
+            if (existingExercise == null)
+            {
+                return NotFound("Ćwiczenie nie znalezione.");
+            }
+
+            existingExercise.Name = exercise.Name;
+            existingExercise.Sets = exercise.Sets;
+            existingExercise.Reps = exercise.Reps;
+            existingExercise.Date = exercise.Date;
+            exercise.Weight = exercise.Weight;
+            existingExercise.Category = exercise.Category;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ExerciseExists(id))
+                {
+                    return NotFound("Ćwiczenie nie istnieje.");
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent(); 
+        }
+
+        private bool ExerciseExists(int id)
+        {
+            return _context.Exercises.Any(e => e.Id == id);
+        }
+
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteExercise(int id)
+        {
+            var exercise = await _context.Exercises.FindAsync(id);
+            if (exercise == null)
+            {
+                return NotFound();
+            }
+
+            _context.Exercises.Remove(exercise);
+            await _context.SaveChangesAsync();
+
+            return NoContent(); 
+        }
     }
 }

@@ -1,4 +1,4 @@
-using ExercisesApp.Data;
+﻿using ExercisesApp.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,12 +10,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://127.0.0.1:5500", "https://localhost:7084") 
+        policy.WithOrigins("http://127.0.0.1:5500", "https://localhost:7084")
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
 });
-
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -34,5 +33,4 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
-
 app.Run();
