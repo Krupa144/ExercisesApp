@@ -1,36 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dodaj ćwiczenie</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Document</title> 
 </head>
 <body class="bg-light p-4">
-  <header>
-  <button class="btn btn-primary" onclick="window.location.href='./site.html'">push</button>
-  <button class="btn btn-primary" onclick="window.location.href='./site.html'">push</button>
-  <button class="btn btn-primary" onclick="window.location.href='./site.html'">push</button>
-  <button class="btn btn-primary" onclick="window.location.href='./site.html'">push</button>
-</header>
+  <header class="mb-4 text-center">
+    <button class="btn btn-primary m-1" onclick="window.location.href='./fullbody.html'">FullBody</button>
+    <button class="btn btn-primary m-1" onclick="window.location.href='./push.html'">Push</button>
+    <button class="btn btn-primary m-1" onclick="window.location.href='./pull.html'">Pull</button>
+    <button class="btn btn-primary m-1" onclick="window.location.href='./legs.html'">Legs</button>
+  </header>
+
   <div class="container">
-    <h1 class="text-primary text-center mb-4">Lista ćwiczeń</h1>
-    <ul id="exercises-list" class="list-unstyled mb-4"></ul>
-    
+    <h1 class="text-primary text-center mb-4">Dodaj nowe ćwiczenie</h1>
+
     <div class="card p-4 mb-4 mx-auto" style="max-width: 500px;">
-      <h2 class="h5 mb-3">Dodaj nowe ćwiczenie</h2>
-      
       <div class="mb-3">
         <input id="name" class="form-control" placeholder="Nazwa ćwiczenia">
       </div>
-      
+
       <div class="row mb-3">
         <div class="col">
-          <input id="sets" class="form-control" placeholder="Powtórzenia">
+          <input id="sets" class="form-control" placeholder="Serie" type="number">
         </div>
         <div class="col">
-          <input id="reps" class="form-control" placeholder="Serie">
+          <input id="reps" class="form-control" placeholder="Powtórzenia" type="number">
+        </div>
+        <div class="col">
+          <input id="weight" class="form-control" placeholder="Ciężar" type="number">
         </div>
       </div>
 
@@ -40,71 +41,12 @@
         <option value="2">Pull</option>
         <option value="3">Legs</option>
       </select>
-      
+
       <input id="date" type="date" class="form-control mb-3">
       <button onclick="addExercise()" class="btn btn-primary w-100">Dodaj ćwiczenie</button>
     </div>
   </div>
 
-    <script>
-    const apiUrl = "https://localhost:7084";
-
-    async function loadExercises() {
-      const response = await fetch(`${apiUrl}/exercises`);
-      const exercises = await response.json();
-
-      const list = document.getElementById("exercises-list");
-      list.innerHTML = "";
-
-      exercises.forEach(exercise => {
-        const li = document.createElement("li");
-        li.textContent = `${exercise.name} - ${categoryName(exercise.category)} - ${exercise.date.split('T')[0]}`;
-        list.appendChild(li);
-      });
-    }
-
-    function categoryName(categoryValue) {
-      switch (categoryValue) {
-        case 0: return "FullBody";
-        case 1: return "Push";
-        case 2: return "Pull";
-        case 3: return "Legs";
-        default: return "Nieznana";
-      }
-    }
-
-    async function addExercise() {
-  const name = document.getElementById("name").value;
-  const category = document.getElementById("category").value;
-  const date = document.getElementById("date").value;
-
-  const sets = document.getElementById("sets").value; 
-  const reps = document.getElementById("reps").value; 
-
-  const exercise = {
-    name: name,
-    category: parseInt(category),
-    date: date,
-    sets: sets ? parseInt(sets) : 0, 
-    reps: reps ? parseInt(reps) : 0  
-  };
-
-  const response = await fetch(`${apiUrl}/exercises`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(exercise)
-  });
-
-  if (response.ok) {
-    alert("Ćwiczenie dodane!");
-    loadExercises();
-  } else {
-    alert("Błąd podczas dodawania ćwiczenia!");
-  }
-}
-
-    window.onload = loadExercises;
-  </script>
+  <script src="./js/index.js"></script>
 </body>
+</html>
