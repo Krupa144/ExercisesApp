@@ -110,5 +110,53 @@ namespace ExercisesApp.Controllers
 
             return NoContent(); 
         }
+
+
+
+
+        [HttpGet("DailyPlan")]
+        public IActionResult DailyPlan()
+        {
+            var today = DateTime.Today.DayOfWeek;
+
+            Category plannedCategory;
+            switch (today)
+            {
+                case DayOfWeek.Monday:
+                    plannedCategory = Category.FullBody;
+                    break;
+                case DayOfWeek.Tuesday:
+                    plannedCategory = Category.Push;
+                    break;
+                case DayOfWeek.Wednesday:
+                    plannedCategory = Category.Pull;
+                    break;
+                case DayOfWeek.Thursday:
+                    plannedCategory = Category.Legs;
+                    break;
+                case DayOfWeek.Friday:
+                    plannedCategory = Category.FullBody;
+                    break;
+                default:
+                    return BadRequest("Nie można zaplanować ćwiczeń na weekend.");
+            }
+
+            var exercises = _context.Exercises
+                .Where(e => e.Category == plannedCategory)
+                .Select(e => new
+                {
+                    e.Name,
+                    e.Sets,
+                    e.Reps,
+                    e.Weight
+                })
+                .ToList();
+
+            return Ok(exercises);
+        }
+
+
+
+
     }
 }
