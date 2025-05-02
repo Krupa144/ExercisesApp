@@ -9,11 +9,17 @@
   --transition: all 0.2s ease-in-out;
 }
 
-body {
+html, body {
+  height: 100%;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: var(--text-color);
   background-color: white;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
 }
 
 .container {
@@ -21,7 +27,6 @@ body {
   padding: 0 20px;
 }
 
-/* Przyciski */
 .btn {
   border-radius: var(--border-radius);
   padding: 8px 16px;
@@ -54,7 +59,6 @@ body {
   color: var(--primary-color);
 }
 
-/* Listy */
 .list-group {
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -83,7 +87,6 @@ body {
   transform: translateX(2px);
 }
 
-/* Formularze */
 .form-control, .form-select {
   border-radius: var(--border-radius);
   padding: 10px 15px;
@@ -96,7 +99,6 @@ body {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Nagłówki */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--primary-color);
@@ -112,7 +114,6 @@ h2 {
   margin: 2rem 0 1rem;
 }
 
-/* Formularz edycji */
 #editForm {
   background-color: white;
   padding: 24px;
@@ -122,17 +123,14 @@ h2 {
   border: 1px solid var(--accent-color);
 }
 
-/* Filtry */
 .d-flex.gap-3 {
   margin-bottom: 1.5rem;
 }
 
-/* Ikony */
 .bi {
   vertical-align: middle;
 }
 
-/* Responsywność */
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
@@ -147,7 +145,6 @@ h2 {
   }
 }
 
-/* Animacje */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
