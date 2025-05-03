@@ -5,7 +5,7 @@
 namespace ExercisesApp.Migrations
 {
     /// <inheritdoc />
-    public partial class AddCategoryToExercises : Migration
+    public partial class AddFirstNameToApplicationUser : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

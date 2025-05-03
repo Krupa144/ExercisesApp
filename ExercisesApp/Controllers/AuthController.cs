@@ -1,0 +1,133 @@
+﻿using ExercisesApp.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ExercisesApp.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class AuthController : ControllerBase
+    {
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly IConfiguration _configuration;
+
+        public AuthController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IConfiguration configuration)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _configuration = configuration;
+        }
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDto dto)
+        {
+            var user = await _userManager.FindByEmailAsync(dto.Email);
+            if (user == null)
+            {
+                return Unauthorized(new { message = "Niepoprawny email lub hasło." });
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(user, dto.Password, false, false);
+
+            if (result.Succeeded)
+            {
+                var claims = new[]
+                {
+            new Claim(ClaimTypes.NameIdentifier, user.Id),
+            new Claim(ClaimTypes.Name, user.UserName),
+            new Claim(ClaimTypes.Email, user.Email)
+        };
+                var key = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
+                    System.Text.Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012")); 
+
+
+                var creds = new Microsoft.IdentityModel.Tokens.SigningCredentials(key, Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256);
+
+                var token = new JwtSecurityToken(
+                    issuer: "yourapp",
+                    audience: "yourapp",
+                    claims: claims,
+                    expires: DateTime.Now.AddHours(1),
+                    signingCredentials: creds);
+
+                var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+                Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+                Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+                return Ok(new { token = tokenString });
+            }
+
+            return Unauthorized(new { message = "Niepoprawne hasło." });
+        }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDto dto)
+        {
+            var existingUser = await _userManager.FindByEmailAsync(dto.Email);
+            if (existingUser != null)
+            {
+                return BadRequest(new { message = "Użytkownik z tym emailem już istnieje." });
+            }
+
+            var user = new ApplicationUser
+            {
+                UserName = dto.Email,  
+                Email = dto.Email,
+                FirstName = dto.FirstName  
+            };
+
+            var result = await _userManager.CreateAsync(user, dto.Password);
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(new { message = "Błąd przy rejestracji użytkownika.", errors = result.Errors });
+            }
+
+            var claims = new[]
+            {
+        new Claim(ClaimTypes.NameIdentifier, user.Id),
+        new Claim(ClaimTypes.Name, user.UserName),
+        new Claim(ClaimTypes.Email, user.Email)
+    };
+
+            var key = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
+                System.Text.Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012"));
+
+            var creds = new Microsoft.IdentityModel.Tokens.SigningCredentials(key, Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(
+                issuer: "yourapp",
+                audience: "yourapp",
+                claims: claims,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: creds);
+
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+            return Ok(new { token = tokenString });
+        }
+
+
+        [HttpGet]
+        public IActionResult Test()
+        {
+            return Ok(new { message = "API is working!" });
+        }
+
+
+
+
+    }
+}

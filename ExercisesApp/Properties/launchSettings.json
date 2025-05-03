@@ -5,7 +5,7 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "https://localhost:44300",
-      "sslPort": 44300 
+      "sslPort": 44300
     }
   },
   "profiles": {
@@ -13,7 +13,7 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5028", 
+      "applicationUrl": "http://localhost:5028",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -23,7 +23,7 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:44300;http://localhost:5028",
+      "applicationUrl": "https://localhost:44300", // Usuń HTTP z aplikacji, tylko HTTPS
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

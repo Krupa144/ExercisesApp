@@ -17,22 +17,91 @@ function categoryName(categoryValue) {
   }
 }
 
-// Ładowanie ćwiczeń
-async function loadExercises() {
-  try {
-    const response = await fetch(`${apiUrl}/exercises`);
-    const exercises = await response.json();
-    allExercises = exercises.filter(ex => ex.category === categoryId);
-
-    calculateProgress();
-    renderExercises();
-    renderProgress();  // <= WAŻNE!
-    populateExerciseNames();
-  } catch (error) {
-    console.error("Błąd ładowania ćwiczeń:", error);
-  }
+// Pobierz token autoryzacyjny
+function getAuthToken() {
+  return sessionStorage.getItem('authToken'); // Zwraca token JWT z sessionStorage
 }
 
+// Obsługa formularza dodawania ćwiczenia
+document.getElementById('exerciseForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const authToken = getAuthToken(); // Pobieramy token JWT z sessionStorage
+  const messageDiv = document.getElementById('exerciseMessage');
+
+  if (!authToken) {
+      messageDiv.style.color = "red";
+      messageDiv.innerText = "Musisz być zalogowany, aby dodać ćwiczenie.";
+      return;
+  }
+
+  const exerciseData = {
+      name: document.getElementById('name').value,
+      category: parseInt(document.getElementById('category').value),
+      sets: parseInt(document.getElementById('sets').value),
+      reps: parseInt(document.getElementById('reps').value),
+      weight: parseFloat(document.getElementById('weight').value),
+      date: document.getElementById('date').value
+  };
+
+  try {
+      const response = await fetch('https://localhost:44300/api/exercises', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${authToken}` // Dodanie tokenu w nagłówku
+          },
+          body: JSON.stringify(exerciseData)
+      });
+
+      if (response.ok) {
+          messageDiv.style.color = "green";
+          messageDiv.innerText = "Ćwiczenie dodane pomyślnie!";
+      } else {
+          const errorText = await response.text();
+          messageDiv.style.color = "red";
+          messageDiv.innerText = "Błąd dodawania ćwiczenia: " + errorText;
+      }
+  } catch (error) {
+      messageDiv.style.color = "red";
+      messageDiv.innerText = "Błąd sieci: " + error.message;
+  }
+});
+
+// Ładowanie ćwiczeń
+async function loadExercises() {
+  const authToken = getAuthToken();
+  if (!authToken) {
+      alert("Musisz być zalogowany, aby zobaczyć ćwiczenia.");
+      return;
+  }
+
+  const response = await fetch('https://localhost:44300/api/exercises', {
+      method: 'GET',
+      headers: {
+          'Authorization': `Bearer ${authToken}`
+      }
+  });
+
+  const exercises = await response.json();
+  const tableBody = document.getElementById('exercisesTable')?.getElementsByTagName('tbody')[0];
+
+  if (tableBody) {
+      exercises.forEach(exercise => {
+          const row = tableBody.insertRow();
+          row.innerHTML = `
+              <td>${exercise.name}</td>
+              <td>${exercise.category}</td>
+              <td>${exercise.sets}</td>
+              <td>${exercise.reps}</td>
+              <td>${exercise.weight}</td>
+              <td>${exercise.date}</td>
+          `;
+      });
+  } else {
+      console.error('Nie znaleziono elementu tableBody.');
+  }
+}
 
 // Obliczanie progresu
 function calculateProgress() {
@@ -74,7 +143,7 @@ function renderExercises() {
   const list = document.getElementById("exercises-list");
   list.innerHTML = "";
 
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Date().toISOString().split('T')[0]; // Dzisiejsza data w formacie yyyy-mm-dd
   let filtered = [...allExercises];
 
   if (selectedExerciseName) {
@@ -143,6 +212,15 @@ function setupFilters() {
     selectedDate = e.target.value;
     renderExercises();
   });
+
+  // Opcja resetowania filtrów
+  document.getElementById("reset-filters").addEventListener("click", () => {
+    selectedExerciseName = "";
+    selectedDate = "";
+    nameFilter.value = "";
+    dateFilter.value = "";
+    renderExercises();
+  });
 }
 
 // Edycja ćwiczenia
@@ -190,22 +268,17 @@ async function updateExercise() {
       cancelEdit();
     } else {
       const text = await response.text();
-      try {
-        const json = JSON.parse(text);
-        alert("Błąd podczas aktualizacji: " + (json.message || JSON.stringify(json)));
-      } catch {
-        alert("Błąd podczas aktualizacji: " + text);
-      }
+      alert(`Błąd aktualizacji: ${text}`);
     }
   } catch (error) {
-    console.error("Błąd aktualizacji:", error);
+    console.error("Błąd aktualizacji ćwiczenia:", error);
     alert("Błąd podczas aktualizacji ćwiczenia!");
   }
 }
 
-// Anulowanie edycji
 function cancelEdit() {
   document.getElementById("editForm").style.display = 'none';
+  editingExerciseId = null;
 }
 
 // Usuwanie ćwiczenia
@@ -213,41 +286,28 @@ async function deleteExercise(id) {
   if (confirm("Czy na pewno chcesz usunąć to ćwiczenie?")) {
     try {
       const response = await fetch(`${apiUrl}/exercises/${id}`, {
-        method: "DELETE",
+        method: "DELETE"
       });
 
       if (response.ok) {
         alert("Ćwiczenie usunięte!");
         loadExercises();
       } else {
-        alert("Błąd podczas usuwania ćwiczenia!");
+        const errorText = await response.text();
+        alert("Błąd usuwania ćwiczenia: " + errorText);
       }
     } catch (error) {
-      console.error("Błąd usuwania:", error);
+      console.error("Błąd usuwania ćwiczenia:", error);
       alert("Błąd podczas usuwania ćwiczenia!");
     }
   }
 }
 
-function renderProgress() {
-  const list = document.getElementById("progress-list");
-  list.innerHTML = "";
-
-  if (progressLog.length === 0) {
-    list.innerHTML = `<li class="list-group-item text-muted">Brak progresu w ostatnich 30 dniach.</li>`;
-    return;
-  }
-
-  progressLog.forEach(p => {
-    const li = document.createElement("li");
-    li.className = "list-group-item";
-    li.innerHTML = `<strong>${p.name}</strong> – +${p.weightGain} kg (z dnia ${p.date})`;
-    list.appendChild(li);
-  });
+// Inicjalizacja
+async function init() {
+  await loadExercises();
+  populateExerciseNames();
+  setupFilters();
 }
 
-// Inicjalizacja
-window.onload = () => {
-  loadExercises();
-  setupFilters();
-};
+init();

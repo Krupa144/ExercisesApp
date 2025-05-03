@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExercisesApp.Models;
+using System;
 
 namespace ExercisesApp.Models
 {
@@ -14,6 +15,9 @@ namespace ExercisesApp.Models
 
         public int Sets { get; set; }
         public DateTime Date { get; set; }
+
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 
     public enum Category

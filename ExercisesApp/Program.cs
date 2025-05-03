@@ -1,19 +1,71 @@
 ﻿using ExercisesApp.Data;
+using ExercisesApp.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", policy =>
+    {
+        policy.WithOrigins("http://127.0.0.1:5500")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddCors(options =>
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 8;
+})
+.AddEntityFrameworkStores<AppDbContext>()
+.AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
     {
-        policy.WithOrigins("http://127.0.0.1:5500", "https://localhost:7084")
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
+        context.Response.StatusCode = 401;
+        return Task.CompletedTask;
+    };
+});
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = "yourapp",
+        ValidAudience = "yourapp",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+            "YourSuperSecretKeyHere12345678901234567890123456789012"))
+    };
+});
+
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
 
 builder.Services.AddControllers();
@@ -22,7 +74,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseCors("AllowFrontend");
+app.UseCors("AllowAllOrigins");
 
 if (app.Environment.IsDevelopment())
 {
@@ -31,6 +83,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
+app.UseAuthentication(); 
 app.UseAuthorization();
+
+app.UseSession(); 
+
 app.MapControllers();
+
 app.Run();
