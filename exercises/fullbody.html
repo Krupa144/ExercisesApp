@@ -29,7 +29,6 @@
   
   <h1 class="mb-4 text-center">Lista ćwiczeń</h1>
 
-  <!-- Tabela do wyświetlania ćwiczeń -->
   <table id="exercisesTable" class="table table-striped">
     <thead>
       <tr>
@@ -43,11 +42,9 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Tutaj będą wstawiane ćwiczenia -->
     </tbody>
   </table>
 
-  <!-- Formularz do edytowania ćwiczenia -->
   <div id="editForm" style="display: none;" class="mb-4">
     <h2 class="h4">Edytuj ćwiczenie</h2>
     <input id="edit-name" class="form-control mb-2" placeholder="Nazwa ćwiczenia" required>
@@ -61,17 +58,6 @@
       <button onclick="cancelEdit()" class="btn btn-secondary">Anuluj</button>
     </div>
   </div>
-
-  <!-- Formularz do dodawania ćwiczenia -->
-  <form id="exerciseForm" class="mb-4">
-    <h2 class="h4">Dodaj ćwiczenie</h2>
-    <input id="name" class="form-control mb-2" placeholder="Nazwa ćwiczenia" required>
-    <input id="sets" class="form-control mb-2" placeholder="Serie" type="number" required>
-    <input id="reps" class="form-control mb-2" placeholder="Powtórzenia" type="number" required>
-    <input id="weight" class="form-control mb-2" placeholder="Ciężar (kg)" type="number" required>
-    <input id="date" class="form-control mb-2" type="date" required>
-    <button type="submit" class="btn btn-success">Dodaj ćwiczenie</button>
-  </form>
 
   <script src="../js/exercises.js"></script>
 </body>

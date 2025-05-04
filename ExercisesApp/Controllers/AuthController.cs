@@ -24,6 +24,7 @@ namespace ExercisesApp.Controllers
             _signInManager = signInManager;
             _configuration = configuration;
         }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
@@ -39,15 +40,13 @@ namespace ExercisesApp.Controllers
             {
                 var claims = new[]
                 {
-            new Claim(ClaimTypes.NameIdentifier, user.Id),
-            new Claim(ClaimTypes.Name, user.UserName),
-            new Claim(ClaimTypes.Email, user.Email)
-        };
-                var key = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                    System.Text.Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012")); 
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(ClaimTypes.Email, user.Email)
+                };
 
-
-                var creds = new Microsoft.IdentityModel.Tokens.SigningCredentials(key, Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256);
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012"));
+                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                 var token = new JwtSecurityToken(
                     issuer: "yourapp",
@@ -62,7 +61,7 @@ namespace ExercisesApp.Controllers
                 Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
                 Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-                return Ok(new { token = tokenString });
+                return Ok(new { token = tokenString, userId = user.Id });
             }
 
             return Unauthorized(new { message = "Niepoprawne hasło." });
@@ -79,9 +78,9 @@ namespace ExercisesApp.Controllers
 
             var user = new ApplicationUser
             {
-                UserName = dto.Email,  
+                UserName = dto.Email,
                 Email = dto.Email,
-                FirstName = dto.FirstName  
+                FirstName = dto.FirstName
             };
 
             var result = await _userManager.CreateAsync(user, dto.Password);
@@ -93,15 +92,13 @@ namespace ExercisesApp.Controllers
 
             var claims = new[]
             {
-        new Claim(ClaimTypes.NameIdentifier, user.Id),
-        new Claim(ClaimTypes.Name, user.UserName),
-        new Claim(ClaimTypes.Email, user.Email)
-    };
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Email, user.Email)
+            };
 
-            var key = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(
-                System.Text.Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012"));
-
-            var creds = new Microsoft.IdentityModel.Tokens.SigningCredentials(key, Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256);
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012"));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
                 issuer: "yourapp",
@@ -116,18 +113,13 @@ namespace ExercisesApp.Controllers
             Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
             Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-            return Ok(new { token = tokenString });
+            return Ok(new { token = tokenString, userId = user.Id });
         }
-
 
         [HttpGet]
         public IActionResult Test()
         {
             return Ok(new { message = "API is working!" });
         }
-
-
-
-
     }
 }

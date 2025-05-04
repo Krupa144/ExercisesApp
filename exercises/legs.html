@@ -17,8 +17,7 @@
   </div>
 
   <h2 class="h5 mt-5">Progres w ostatnich 30 dniach</h2>
-<ul id="progress-list" class="list-group mb-4"></ul>
-
+  <ul id="progress-list" class="list-group mb-4"></ul>
 
   <div class="mb-3 d-flex gap-3">
     <select id="exercise-name-filter" class="form-select w-auto">
@@ -28,11 +27,23 @@
     <input type="date" id="exercise-date-filter" class="form-control w-auto">
   </div>
   
-  
-
   <h1 class="mb-4 text-center">Lista ćwiczeń</h1>
 
-  <ul id="exercises-list" class="list-group mb-4"></ul>
+  <table id="exercisesTable" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nazwa ćwiczenia</th>
+        <th>Kategoria</th>
+        <th>Serie</th>
+        <th>Powtórzenia</th>
+        <th>Ciężar</th>
+        <th>Data</th>
+        <th>Opcje</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 
   <div id="editForm" style="display: none;" class="mb-4">
     <h2 class="h4">Edytuj ćwiczenie</h2>
@@ -40,9 +51,9 @@
     <input id="edit-sets" class="form-control mb-2" placeholder="Serie" type="number" required>
     <input id="edit-reps" class="form-control mb-2" placeholder="Powtórzenia" type="number" required>
     <input id="edit-date" class="form-control mb-2" type="date" required>
-    <input id="edit-reps" class="form-control mb-2" placeholder="Powtórzenia" type="number" required>
     <input id="edit-weight" class="form-control mb-2" placeholder="Ciężar (kg)" type="number" required>
-  <div>
+    
+    <div>
       <button onclick="updateExercise()" class="btn btn-primary me-2">Zapisz zmiany</button>
       <button onclick="cancelEdit()" class="btn btn-secondary">Anuluj</button>
     </div>

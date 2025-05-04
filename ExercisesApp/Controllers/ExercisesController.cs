@@ -100,16 +100,25 @@ namespace ExercisesApp.Controllers
             exercise.Category = updatedExercise.Category;
             exercise.Date = updatedExercise.Date;
 
+            // Przypisanie UserId do ćwiczenia (jeśli nie było w przesłanym obiekcie)
+            if (string.IsNullOrEmpty(exercise.UserId))
+            {
+                exercise.UserId = userId;
+            }
+
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
+
 
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> DeleteExercise(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            Console.WriteLine($"Próba usunięcia ćwiczenia o ID: {id} przez użytkownika: {userId}");
+
             var exercise = await _context.Exercises
                 .FirstOrDefaultAsync(e => e.Id == id && e.UserId == userId);
 
@@ -121,6 +130,7 @@ namespace ExercisesApp.Controllers
 
             return NoContent();
         }
+
 
         [HttpGet("DailyPlan")]
         [Authorize]

@@ -3,89 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/views.css">
     <title>Rejestracja</title>
 </head>
-<body>
-    <h2>Rejestracja</h2>
-    <form id="registerForm">
-        <label for="firstName">Imię:</label>
-        <input type="text" id="firstName" required><br>
+<body class="d-flex align-items-center justify-content-center min-vh-100 bg-light">
+    <div class="container">
+        <div class="card p-4 shadow-sm" style="max-width: 500px; margin: 0 auto;">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Rejestracja</h2>
+                <form id="registerForm" class="mb-3">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">Imię:</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Hasło:</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="phoneNumber" class="form-label">Numer telefonu:</label>
+                        <input type="tel" class="form-control" id="phoneNumber" required>
+                    </div>
+                    
+                    <div class="d-grid gap-2 mb-3">
+                        <button type="submit" class="btn btn-primary">Zarejestruj</button>
+                    </div>
+                </form>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" required><br>
+                <div id="registerMessage" class="alert d-none"></div>
+            </div>
+        </div>
+    </div>
 
-        <label for="password">Hasło:</label>
-        <input type="password" id="password" required><br>
+    <script src="./js/registerForm.js"></script>
 
-        <label for="phoneNumber">Numer telefonu:</label>
-        <input type="tel" id="phoneNumber" required><br>
-
-        <button type="submit">Zarejestruj</button>
-    </form>
-
-    <div id="registerMessage"></div>
-
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const firstName = document.getElementById('firstName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
-
-            const messageDiv = document.getElementById('registerMessage');
-
-            // Walidacja pól
-            if (!firstName || !email || !password || !phoneNumber) {
-                messageDiv.style.color = "red";
-                messageDiv.innerText = "Wszystkie pola są wymagane!";
-                return;
-            }
-
-            // Walidacja formatu emaila
-            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-            if (!emailRegex.test(email)) {
-                messageDiv.style.color = "red";
-                messageDiv.innerText = "Niepoprawny format adresu e-mail!";
-                return;
-            }
-
-            const registerData = {
-                email: email,
-                password: password,
-                phoneNumber: phoneNumber,
-                firstName: firstName
-            };
-
-            try {
-                const response = await fetch('https://localhost:44300/api/auth/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(registerData)
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    localStorage.setItem('authToken', data.token);  // Zapisujemy token po rejestracji
-                    messageDiv.style.color = "green";
-                    messageDiv.innerText = "Rejestracja zakończona sukcesem!";
-                } else {
-                    const errorResponse = await response.json();
-                    messageDiv.style.color = "red";
-                    if (errorResponse.errors && Array.isArray(errorResponse.errors)) {
-                        messageDiv.innerText = `Błąd: ${errorResponse.errors.join(', ')}`;
-                    } else {
-                        messageDiv.innerText = "Wystąpił błąd podczas rejestracji. Spróbuj ponownie.";
-                    }
-                }
-            } catch (error) {
-                messageDiv.style.color = "red";
-                messageDiv.innerText = "Wystąpił problem z połączeniem. Spróbuj ponownie.";
-            }
-        });
-    </script>
 </body>
 </html>

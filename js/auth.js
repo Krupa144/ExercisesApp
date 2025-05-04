@@ -1,28 +1,51 @@
-// auth.js
+function getAuthToken() {
+    return sessionStorage.getItem('authToken'); 
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const token = localStorage.getItem('authToken'); // Pobierz token z localStorage (lub sessionStorage)
-    const userNameElement = document.getElementById('userName');
-    const profileLink = document.getElementById('profileLink');
-    const logoutLink = document.getElementById('logoutLink');
-    
-    if (token) {
-        // Jeśli token istnieje, użytkownik jest zalogowany
-        // Możesz również pobrać dane użytkownika z API, aby uzyskać np. imię
-        const user = JSON.parse(localStorage.getItem('userData')); // Pobierz dane użytkownika z localStorage
-        userNameElement.textContent = `Witaj, ${user.firstName}`; // Zakładając, że w userData masz firstName
-        profileLink.href = './profile.html'; // Możesz ustawić link do profilu użytkownika
-        logoutLink.style.display = 'inline'; // Pokaż opcję wylogowania
-        document.getElementById('navLinks').addEventListener('click', handleLogout); // Dodaj nasłuchiwanie na kliknięcie wylogowania
-    } else {
-        // Jeśli token nie istnieje, przekieruj na stronę logowania
-        window.location.href = './login.html';
+if (getAuthToken()) {
+    document.getElementById('loginFormDiv').style.display = 'none';
+    document.getElementById('mainPageDiv').style.display = 'block';
+}
+
+// Funkcja logowania
+document.getElementById('loginForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const messageDiv = document.getElementById('loginMessage');
+
+    try {
+        const response = await fetch('https://localhost:44300/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email, password: password })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            sessionStorage.setItem('authToken', data.token); 
+
+            document.getElementById('loginFormDiv').style.display = 'none';
+            document.getElementById('mainPageDiv').style.display = 'block';
+        } else {
+            const errorText = await response.text();
+            messageDiv.style.color = "red";
+            messageDiv.innerText = "Błąd logowania: " + errorText;
+        }
+    } catch (error) {
+        messageDiv.style.color = "red";
+        messageDiv.innerText = "Błąd sieci: " + error.message;
     }
 });
 
-// Funkcja wylogowania
-function handleLogout() {
-    localStorage.removeItem('authToken'); // Usuń token z localStorage
-    localStorage.removeItem('userData'); // Usuń dane użytkownika
-    window.location.href = './login.html'; // Przekieruj do strony logowania
-}
+document.getElementById('logoutBtn').addEventListener('click', function () {
+    sessionStorage.removeItem('authToken'); 
+    window.location.href = 'login.html'; 
+});
+
+document.getElementById('viewProfileBtn').addEventListener('click', function () {
+    window.location.href = 'start.html'; 
+});

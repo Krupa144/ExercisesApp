@@ -17,7 +17,8 @@ namespace ExercisesApp.Models
         public DateTime Date { get; set; }
 
         public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        public ApplicationUser? User { get; set; } // poprawka – opcjonalne
+
     }
 
     public enum Category
