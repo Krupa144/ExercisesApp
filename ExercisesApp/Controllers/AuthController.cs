@@ -45,15 +45,16 @@ namespace ExercisesApp.Controllers
                     new Claim(ClaimTypes.Email, user.Email)
                 };
 
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012"));
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                 var token = new JwtSecurityToken(
-                    issuer: "yourapp",
-                    audience: "yourapp",
+                    issuer: _configuration["Jwt:Issuer"],
+                    audience: _configuration["Jwt:Audience"],
                     claims: claims,
                     expires: DateTime.Now.AddHours(1),
-                    signingCredentials: creds);
+                    signingCredentials: creds
+                );
 
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
@@ -97,15 +98,16 @@ namespace ExercisesApp.Controllers
                 new Claim(ClaimTypes.Email, user.Email)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("YourSuperSecretKeyHere12345678901234567890123456789012"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: "yourapp",
-                audience: "yourapp",
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
                 claims: claims,
                 expires: DateTime.Now.AddHours(1),
-                signingCredentials: creds);
+                signingCredentials: creds
+            );
 
             var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 

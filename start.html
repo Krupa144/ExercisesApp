@@ -12,13 +12,12 @@
 
   <header class="bg-dark text-white p-3">
     <div class="container d-flex justify-content-between align-items-center">
-        <h1 class="h4 mb-0">Exercises</h1>
+        <h1 class="h4 mb-0">ExercisesApp</h1>
         <nav id="navLinks">
             <a href="./index.html" class="text-white me-3"><i class="bi bi-plus"></i> Add Exercise</a>
             <a href="#" class="text-white me-3"><i class="bi bi-house"></i> Start</a>
             <a href="./login.html" class="text-white me-3" id="profileLink"><i class="bi bi-person"></i> Profile</a>
-            <span class="text-white" id="userName"></span> <!-- Miejsce na imię użytkownika -->
-            <a href="#" class="text-white me-3" id="logoutLink" style="display:none;">Logout</a>
+            <a href="./foods.html" class="text-white me-3" id="profileLink"><i class="bi bi-egg"></i> Foods</a>
         </nav>
     </div>
 </header>
@@ -40,14 +39,22 @@
         <button class="btn btn-primary m-1" onclick="window.location.href='./exercises/legs.html'">Legs</button>
     </article>
 
-    <section class="bg-white p-3 rounded shadow-sm text-center">
-      <h2 class="h6 mb-3">Dodaj ćwiczenie</h2>
-      
+    <section class="bg-white p-3 rounded shadow-sm text-center mb-4">
+      <h2 class="h6 mb-3">Add Exercise</h2>
       <a href="index.html" class="btn btn-outline-primary">
-        <i class="bi bi-plus-circle me-2"></i>Dodaj nowe ćwiczenie
+        <i class="bi bi-plus-circle me-2"></i>Add Exercise
       </a>
     </section>
+    
+    <section class="bg-white p-4 rounded shadow-sm text-center">
+      <h2 class="h6 mb-3">Add Food</h2>
+      <a href="barcode.html" class="btn btn-outline-primary">
+        <i class="bi bi-plus-circle me-2"></i>Add Food
+      </a>
+    </section>
+    
   </main>
+  
 
   <footer class="bg-dark text-white text-center py-3">
     <ul class="list-inline mb-0">
@@ -56,6 +63,8 @@
         <a href="https://github.com/Krupa144" target="_blank" class="text-white text-decoration-none">
           <i class="bi bi-github"></i> GitHub
         </a>
+      </li>
+        <li class="list-inline-item">
         <a href="https://www.linkedin.com/in/kacper-krupa-74277b2b7/" target="_blank" class="text-white text-decoration-none">
           <i class="bi bi-linkedin"></i> Linkedin
         </a>

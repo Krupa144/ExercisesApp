@@ -100,7 +100,6 @@ namespace ExercisesApp.Controllers
             exercise.Category = updatedExercise.Category;
             exercise.Date = updatedExercise.Date;
 
-            // Przypisanie UserId do ćwiczenia (jeśli nie było w przesłanym obiekcie)
             if (string.IsNullOrEmpty(exercise.UserId))
             {
                 exercise.UserId = userId;

@@ -7,7 +7,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     const phoneNumber = document.getElementById('phoneNumber').value.trim();
 
     const messageDiv = document.getElementById('registerMessage');
-    messageDiv.classList.remove('d-none'); // ← pokaż komunikat
+    messageDiv.classList.remove('d-none'); 
     messageDiv.style.color = "red";
 
     if (!firstName || !email || !password || !phoneNumber) {
@@ -47,7 +47,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             messageDiv.style.color = "green";
             messageDiv.innerText = "Rejestracja zakończona sukcesem! Przekierowywanie do logowania...";
             setTimeout(() => {
-                window.location.href = "login.html"; // ← popraw ścieżkę, jeśli potrzeba
+                window.location.href = "login.html"; 
             }, 2000);
         } else {
             let errorMessage = "Wystąpił błąd podczas rejestracji.";

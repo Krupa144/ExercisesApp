@@ -1,6 +1,8 @@
 function getAuthToken() {
     return sessionStorage.getItem('authToken'); 
 }
+console.log(getAuthToken());
+
 
 document.getElementById('exerciseForm').addEventListener('submit', async function (e) {
     e.preventDefault(); 
