@@ -26,7 +26,7 @@ ORM: Entity Framework Core
 
 Database: SQL Server, Docker
 
-Frontend: HTML, CSS, JavaScript
+Frontend: HTML, CSS, JavaScript, Boostrap
 
 Authentication: ASP.NET Identity
 
