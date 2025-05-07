@@ -30,4 +30,4 @@ Frontend: HTML, CSS, JavaScript, Boostrap
 
 Authentication: ASP.NET Identity
 
-External API: OpenFoodFacts (https://world.openfoodfacts.org/api/v2/product/)
+External API: OpenFoodFacts (https://world.openfoodfacts.org)
