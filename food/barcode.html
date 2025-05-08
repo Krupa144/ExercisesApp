@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/food.css">
+    <title>Food Scanner</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div class="scanner-container">
+        <h2 class="scanner-title">Wyszukaj produkt po kodzie kreskowym</h2>
+        <input type="text" id="barcodeInput" class="barcode-input" placeholder="Wprowadź kod kreskowy" />
+        <button class="search-btn" onclick="searchProduct()">
+            <i class="bi bi-upc-scan"></i> Szukaj produktu
+        </button>
+
+        <div id="result" class="food-info" style="display: none;">
+            <p><strong>Nazwa:</strong> <span id="name">Brak danych</span></p>
+            <p><strong>Marka:</strong> <span id="brand">Brak danych</span></p>
+            <p><strong>Kalorie:</strong> <span id="calories">0</span> kcal</p>
+            <p><strong>Białko:</strong> <span id="protein">0</span> g</p>
+            <p><strong>Węglowodany:</strong> <span id="carbs">0</span> g</p>
+            <p><strong>Tłuszcze:</strong> <span id="fats">0</span> g</p>
+            <p><strong>Cukry:</strong> <span id="sugars">0</span> g</p>
+            <p><strong>Tł. nasycone:</strong> <span id="saturatedFat">0</span> g</p>
+            <p><strong>Sól:</strong> <span id="salt">0</span> g</p>
+            <button class="save-btn" onclick="saveProduct()">
+                <i class="bi bi-save"></i> Zapisz do bazy
+            </button>
+        </div>
+    </div>
+
+    <script src="../foodJs/barcode.js"></script>
+</body>
+</html>

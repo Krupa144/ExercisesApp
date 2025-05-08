@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/food.css">
+    <title>Twoje produkty żywnościowe</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Twoje produkty żywnościowe</h1>
+        
+        <div class="d-flex justify-content-between mb-4">
+            <a href="../start.html" class="btn btn-info">
+                <i class="bi bi-person"></i> Profil
+            </a>
+            <a href="addFood.html" class="btn btn-primary">
+                <i class="bi bi-plus"></i> Dodaj produkt
+            </a>
+        </div>
+        
+        <div id="error" class="alert alert-danger" style="display: none;"></div>
+        
+       
+
+        <h3 class="mb-3">Produkty z dzisiaj</h3>
+        <div id="productsList" class="row"></div>
+        
+        <!-- Edit Modal -->
+        <div class="modal fade" id="editProductModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edytuj produkt</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editProductForm">
+                            <input type="hidden" id="editProductId">
+                            <div class="mb-3">
+                                <label for="editProductName" class="form-label">Nazwa*</label>
+                                <input type="text" class="form-control" id="editProductName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductBrand" class="form-label">Marka</label>
+                                <input type="text" class="form-control" id="editProductBrand">
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="editProductCalories" class="form-label">Kalorie (kcal)*</label>
+                                    <input type="number" class="form-control" id="editProductCalories" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editProductCarbs" class="form-label">Węglowodany (g)</label>
+                                    <input type="number" step="0.1" class="form-control" id="editProductCarbs">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editProductProtein" class="form-label">Białko (g)</label>
+                                    <input type="number" step="0.1" class="form-control" id="editProductProtein">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editProductFats" class="form-label">Tłuszcze (g)</label>
+                                    <input type="number" step="0.1" class="form-control" id="editProductFats">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editProductSalt" class="form-label">Sól (g)</label>
+                                    <input type="number" step="0.1" class="form-control" id="editProductSalt">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="editProductBarcode" class="form-label">Kod kreskowy</label>
+                                    <input type="text" class="form-control" id="editProductBarcode">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                        <button type="button" id="saveEditBtn" class="btn btn-primary">Zapisz zmiany</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4 small-card">
+            <div class="card-body">
+                <h4 class="card-title">Dzienne makroskładniki</h4>
+                <canvas id="macrosChart" height="100"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../foodJs/foodList.js"></script>
+</body>
+</html>

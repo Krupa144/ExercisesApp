@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ExercisesApp.Controllers
 {
@@ -252,22 +253,22 @@ namespace ExercisesApp.Controllers
                 if (barcode.Length < 8)
                     return BadRequest("Barcode must be at least 8 digits");
 
-                                    var local = await _context.Foods
-                        .Where(f => f.Barcode == barcode)
-                        .Select(f => new FoodInfoDto
-                        {
-                            Name = f.Name,
-                            Barcode = f.Barcode,
-                            Brand = f.Brand,
-                            Calories = f.Calories ?? 0, 
-                            Protein = f.Protein ?? 0,   
-                            Carbs = f.Carbs ?? 0,        
-                            Fats = f.Fats ?? 0,         
-                            Sugars = f.Sugars ?? 0,     
-                            SaturatedFat = f.SaturatedFat ?? 0, 
-                            Salt = f.Salt ?? 0          
-                        })
-                        .FirstOrDefaultAsync();
+                var local = await _context.Foods
+                    .Where(f => f.Barcode == barcode)
+                    .Select(f => new FoodInfoDto
+                    {
+                        Name = f.Name,
+                        Barcode = f.Barcode,
+                        Brand = f.Brand,
+                        Calories = f.Calories ?? 0,
+                        Protein = f.Protein ?? 0,
+                        Carbs = f.Carbs ?? 0,
+                        Fats = f.Fats ?? 0,
+                        Sugars = f.Sugars ?? 0,
+                        SaturatedFat = f.SaturatedFat ?? 0,
+                        Salt = f.Salt ?? 0
+                    })
+                    .FirstOrDefaultAsync();
 
                 if (local != null)
                     return Ok(new { source = "local_database", data = local });
@@ -283,18 +284,20 @@ namespace ExercisesApp.Controllers
                 if (apiData?.status != 1)
                     return NotFound("Product not found");
 
+                var nutriments = apiData.product?.nutriments;
+
                 var product = new FoodInfoDto
                 {
-                    Name = apiData.product.product_name ?? "Unknown product",
+                    Name = apiData.product?.product_name ?? null,
                     Barcode = barcode,
-                    Brand = apiData.product.brands ?? apiData.product.brand_owner ?? "",
-                    Calories = (int?)apiData.product.nutriments?.energy_kcal_100g ?? 0,
-                    Protein = (float?)apiData.product.nutriments?.proteins_100g ?? 0,
-                    Carbs = (float?)apiData.product.nutriments?.carbohydrates_100g ?? 0,
-                    Fats = (float?)apiData.product.nutriments?.fat_100g ?? 0,
-                    Sugars = (float?)apiData.product.nutriments?.sugars_100g ?? 0,
-                    SaturatedFat = (float?)apiData.product.nutriments?.saturated_fat_100g ?? 0,
-                    Salt = (float?)apiData.product.nutriments?.salt_100g ?? (float?)apiData.product.nutriments?.sodium_100g * 2.5f ?? 0
+                    Brand = apiData.product?.brands ?? apiData.product?.brand_owner ?? null,
+                    Calories = nutriments.energy_kcal != null ? (int)nutriments.energy_kcal : 0,
+                    Protein = (float?)nutriments?.proteins_100g,
+                    Carbs = (float?)nutriments?.carbohydrates_100g,
+                    Fats = (float?)nutriments?.fat_100g,
+                    Sugars = (float?)nutriments?.sugars_100g,
+                    SaturatedFat = (float?)nutriments?.saturated_fat_100g,
+                    Salt = (float?)(nutriments?.salt_100g ?? (nutriments?.sodium_100g * 2.5f))
                 };
 
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -314,7 +317,7 @@ namespace ExercisesApp.Controllers
                         Salt = product.Salt,
                         CreatedAt = DateTime.UtcNow,
                         UserId = userId,
-                        ConsumedAt = DateTime.UtcNow 
+                        ConsumedAt = DateTime.UtcNow
                     };
 
                     _context.Foods.Add(newFood);
@@ -329,6 +332,7 @@ namespace ExercisesApp.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
 
         [HttpGet("any")]
         public async Task<IActionResult> AnyFoodExists()

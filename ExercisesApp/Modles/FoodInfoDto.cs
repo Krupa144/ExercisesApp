@@ -2,7 +2,7 @@
 {
     public class FoodInfoDto
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public string? Barcode { get; set; }
         public string? Brand { get; set; }
         public int Calories { get; set; }

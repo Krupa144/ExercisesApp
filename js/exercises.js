@@ -1,227 +1,190 @@
-let selectedExerciseName = "";
-let selectedDate = "";
 const apiUrl = "https://localhost:44300";
-let editingExerciseId = null;
 let allExercises = [];
+let editingExerciseId = null;
 
-function categoryName(categoryValue) {
-  switch (categoryValue) {
-    case 0: return "FullBody";
-    case 1: return "Push";
-    case 2: return "Pull";
-    case 3: return "Legs";
-    default: return "Nieznana";
-  }
+function categoryName(val) {
+  return ["FullBody", "Push", "Pull", "Legs"][val] || "Nieznana";
 }
 
 function getAuthToken() {
-  return sessionStorage.getItem('authToken'); 
+  return sessionStorage.getItem('authToken');
 }
 
 async function loadExercises() {
-  const authToken = getAuthToken();
-  if (!authToken) {
-    alert("Musisz być zalogowany, aby zobaczyć ćwiczenia.");
-    return;
-  }
+  const token = getAuthToken();
+  if (!token) return alert("Musisz być zalogowany.");
 
   try {
-    const response = await fetch(`${apiUrl}/api/exercises`, {
-      method: 'GET',
-      headers: { 'Authorization': `Bearer ${authToken}` }
+    const res = await fetch(`${apiUrl}/api/exercises`, {
+      headers: { 'Authorization': `Bearer ${token}` }
     });
-
-    if (!response.ok) {
-      throw new Error("Nie udało się pobrać ćwiczeń");
-    }
-
-    const exercises = await response.json();
-    allExercises = exercises;
-
-    const categoryFilter = document.body.getAttribute('data-category'); 
-    const filteredExercises = exercises.filter(exercise => {
-      return categoryFilter === "0" || exercise.category === parseInt(categoryFilter); 
-    });
-
-    const tableBody = document.getElementById('exercisesTable')?.getElementsByTagName('tbody')[0];
-
-    if (tableBody) {
-      tableBody.innerHTML = '';
-      filteredExercises.forEach(exercise => {
-        const row = tableBody.insertRow();
-        row.innerHTML = ` 
-          <td>${exercise.name}</td>
-          <td>${categoryName(exercise.category)}</td>
-          <td>${exercise.sets}</td>
-          <td>${exercise.reps}</td>
-          <td>${exercise.weight}</td>
-          <td>${exercise.date.split('T')[0]}</td>
-          <td>
-            <button class="btn btn-sm btn-warning" onclick="editExercise(${exercise.id})">Edytuj</button>
-            <button class="btn btn-sm btn-danger" onclick="deleteExercise(${exercise.id})">Usuń</button>
-          </td>
-        `;
-      });
-    }
-  } catch (error) {
-    console.error("Błąd ładowania ćwiczeń:", error);
+    if (!res.ok) throw new Error();
+    allExercises = await res.json();
+    initializeFilters();
+    updateProgressChart();
+    filterExercises();
+  } catch {
     alert("Nie udało się załadować ćwiczeń.");
   }
 }
 
-async function editExercise(id) {
-  const token = getAuthToken();
-  try {
-    const response = await fetch(`${apiUrl}/api/exercises/${id}`, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json'
-      }
-    });
+function updateProgressChart() {
+  const list = document.getElementById("progress-list");
+  list.innerHTML = "";
 
-    if (!response.ok) {
-      throw new Error(`Błąd: ${response.statusText}`);
-    }
+  const recent = allExercises.filter(e => new Date(e.date) >= new Date(Date.now() - 30 * 864e5));
 
-    const exercise = await response.json();
-    document.getElementById("edit-name").value = exercise.name;
-    document.getElementById("edit-sets").value = exercise.sets;
-    document.getElementById("edit-reps").value = exercise.reps;
-    document.getElementById("edit-weight").value = exercise.weight;
-    document.getElementById("edit-date").value = exercise.date.split('T')[0];
-    editingExerciseId = id;
-
-    document.getElementById("editForm").style.display = 'block';
-  } catch (error) {
-    console.error("Błąd ładowania ćwiczenia:", error);
-    alert("Błąd podczas edytowania ćwiczenia!");
+  const grouped = {};
+  for (const ex of recent) {
+    grouped[ex.name] = grouped[ex.name] || [];
+    grouped[ex.name].push(ex);
   }
+
+  Object.entries(grouped).forEach(([name, entries]) => {
+    if (entries.length < 2) return;
+
+    entries.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const first = entries[0].weight;
+    const last = entries.at(-1).weight;
+    const change = (((last - first) / first) * 100).toFixed(1);
+
+    const li = document.createElement("li");
+    li.className = "list-group-item d-flex justify-content-between align-items-center";
+    li.innerHTML = `
+      <span>${name}</span>
+      <span class="badge ${change >= 0 ? 'bg-success' : 'bg-danger'} rounded-pill">
+        ${change >= 0 ? '+' : ''}${change}%
+      </span>`;
+    list.appendChild(li);
+  });
+
+  if (!list.children.length)
+    list.innerHTML = '<li class="list-group-item">Brak danych do obliczenia progresu</li>';
+}
+
+function filterExercises() {
+  const tbody = document.querySelector("#exercisesTable tbody");
+  tbody.innerHTML = "";
+
+  const name = document.getElementById("exercise-name-filter").value.toLowerCase();
+  const date = document.getElementById("exercise-date-filter").value;
+  const category = document.body.dataset.category;
+
+  const filtered = allExercises.filter(e =>
+    (!name || e.name.toLowerCase().includes(name)) &&
+    (!date || e.date.startsWith(date)) &&
+    (!category || category === "0" || parseInt(category) === e.category)
+  );
+
+  if (!filtered.length) {
+    tbody.innerHTML = `<tr><td colspan="7" class="text-center py-4 text-muted">Brak ćwiczeń</td></tr>`;
+    return;
+  }
+
+  for (const ex of filtered) {
+    const tr = tbody.insertRow();
+    tr.innerHTML = `
+      <td>${ex.name}</td>
+      <td>${categoryName(ex.category)}</td>
+      <td>${ex.sets}</td>
+      <td>${ex.reps}</td>
+      <td>${ex.weight} kg</td>
+      <td>${ex.date.split("T")[0]}</td>
+      <td>
+        <button class="btn btn-sm btn-warning me-2" onclick="editExercise(${ex.id})">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button class="btn btn-sm btn-danger" onclick="deleteExercise(${ex.id})">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>`;
+  }
+}
+
+function initializeFilters() {
+  const nameSelect = document.getElementById("exercise-name-filter");
+  const uniqueNames = [...new Set(allExercises.map(e => e.name))].sort();
+  nameSelect.innerHTML = `<option value="">Wszystkie ćwiczenia</option>` +
+    uniqueNames.map(n => `<option value="${n}">${n}</option>`).join("");
+
+  nameSelect.onchange = filterExercises;
+  document.getElementById("exercise-date-filter").onchange = filterExercises;
+}
+
+function editExercise(id) {
+  const ex = allExercises.find(e => e.id === id);
+  if (!ex) return alert("Nie znaleziono ćwiczenia.");
+
+  document.getElementById("editForm").style.display = "block";
+  document.getElementById("edit-name").value = ex.name;
+  document.getElementById("edit-date").value = ex.date.split("T")[0];
+  document.getElementById("edit-sets").value = ex.sets;
+  document.getElementById("edit-reps").value = ex.reps;
+  document.getElementById("edit-weight").value = ex.weight;
+  editingExerciseId = id;
+}
+
+function cancelEdit() {
+  document.getElementById("editForm").style.display = "none";
+  editingExerciseId = null;
 }
 
 async function updateExercise() {
   const token = getAuthToken();
-  const userId = sessionStorage.getItem("userId");
-  if (!userId) {
-    alert("Brakuje informacji o użytkowniku. Zaloguj się ponownie.");
-    return;
-  }
+  if (!token || !editingExerciseId) return;
 
   const updated = {
     id: editingExerciseId,
     name: document.getElementById("edit-name").value,
-    sets: parseInt(document.getElementById("edit-sets").value),
-    reps: parseInt(document.getElementById("edit-reps").value),
-    weight: parseFloat(document.getElementById("edit-weight").value),
     date: document.getElementById("edit-date").value,
-    userId: userId,
-    user: null 
+    sets: +document.getElementById("edit-sets").value,
+    reps: +document.getElementById("edit-reps").value,
+    weight: +document.getElementById("edit-weight").value
   };
 
   try {
-    const response = await fetch(`${apiUrl}/api/exercises/${editingExerciseId}`, {
+    const res = await fetch(`${apiUrl}/api/exercises/${editingExerciseId}`, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(updated)
     });
 
-    if (response.ok) {
-      alert("Ćwiczenie zaktualizowane!");
-      loadExercises();
-      cancelEdit();
-    } else {
-      const text = await response.text();
-      alert(`Błąd aktualizacji: ${text}`);
-    }
-  } catch (error) {
-    console.error("Błąd aktualizacji ćwiczenia:", error);
-    alert("Błąd podczas aktualizacji ćwiczenia!");
+    if (!res.ok) throw new Error();
+    alert("Ćwiczenie zaktualizowane.");
+    cancelEdit();
+    loadExercises();
+  } catch {
+    alert("Nie udało się zaktualizować ćwiczenia.");
   }
-}
-
-function cancelEdit() {
-  document.getElementById("editForm").style.display = 'none';
-  editingExerciseId = null;
 }
 
 async function deleteExercise(id) {
+  if (!confirm("Czy na pewno chcesz usunąć to ćwiczenie?")) return;
+
   const token = getAuthToken();
-  if (confirm("Czy na pewno chcesz usunąć to ćwiczenie?")) {
-    try {
-      const response = await fetch(`${apiUrl}/api/exercises/${id}`, {
-        method: "DELETE",
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
+  try {
+    const res = await fetch(`${apiUrl}/api/exercises/${id}`, {
+      method: "DELETE",
+      headers: { "Authorization": `Bearer ${token}` }
+    });
 
-      if (response.ok) {
-        alert("Ćwiczenie usunięte!");
-        loadExercises();
-      } else {
-        const errorText = await response.text();
-        alert("Błąd usuwania ćwiczenia: " + errorText);
-      }
-    } catch (error) {
-      console.error("Błąd usuwania ćwiczenia:", error);
-      alert("Błąd podczas usuwania ćwiczenia!");
-    }
+    if (!res.ok) throw new Error();
+    alert("Ćwiczenie usunięte.");
+    loadExercises();
+  } catch {
+    alert("Nie udało się usunąć ćwiczenia.");
   }
 }
 
 
-function filterExercises() {
-  const list = document.getElementById("exercises-list");
-  if (!list) return;
-
-  list.innerHTML = ""; 
-
-  const categoryFilter = document.body.getAttribute('data-category');
+document.addEventListener("DOMContentLoaded", function () {
   const today = new Date().toISOString().split('T')[0];
-
-  const filtered = allExercises.filter(exercise => {
-    const exerciseDate = exercise.date.split('T')[0];
-    return (
-      (categoryFilter ? exercise.category == categoryFilter : true) && 
-      (selectedExerciseName ? exercise.name.includes(selectedExerciseName) : true) && 
-      (selectedDate ? exerciseDate === selectedDate : true) && 
-      (selectedDate || exerciseDate === today) 
-    );
-  });
-
-  if (filtered.length === 0) {
-    list.innerHTML = `<li class="list-group-item text-muted">Brak ćwiczeń do wyświetlenia.</li>`;
-    return;
-  }
-
-  filtered.forEach(ex => {
-    const li = document.createElement("li");
-    li.className = "list-group-item d-flex justify-content-between align-items-start";
-    const date = new Date(ex.date).toLocaleDateString("pl-PL");
-    li.innerHTML = `
-      <div>
-        <strong>${ex.name}</strong><br>
-        Serie: ${ex.sets}, Powtórzenia: ${ex.reps}, Ciężar: ${ex.weight} kg<br>
-        Kategoria: ${categoryName(ex.category)}<br>
-        Data: ${date}
-      </div>
-      <button class="btn btn-danger" onclick="deleteExercise(${ex.id})">Usuń</button>
-    `;
-    list.appendChild(li);
-  });
-}
-
-document.getElementById("exercise-date-filter")?.addEventListener("input", function () {
-  selectedDate = this.value;
-  filterExercises();
+  document.getElementById("exercise-date-filter").value = today;
 });
 
-document.getElementById("exercise-name-filter")?.addEventListener("input", function () {
-  selectedExerciseName = this.value;
-  filterExercises();
-});
+// Dodaj później funkcje editExercise(), updateExercise(), deleteExercise(), cancelEdit()
 
-loadExercises();
+document.addEventListener("DOMContentLoaded", loadExercises);

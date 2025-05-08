@@ -55,3 +55,5 @@ document.getElementById('exerciseForm').addEventListener('submit', async functio
         messageDiv.innerText = "Błąd sieci: " + error.message;
     }
 });
+
+

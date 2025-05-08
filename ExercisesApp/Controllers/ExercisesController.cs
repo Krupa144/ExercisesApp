@@ -136,8 +136,12 @@ namespace ExercisesApp.Controllers
         public IActionResult DailyPlan()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var today = DateTime.Today.DayOfWeek;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized("Brak tokenu JWT lub token jest nieprawidłowy.");
+            }
 
+            var today = DateTime.Today.DayOfWeek;
             Category plannedCategory;
             switch (today)
             {
@@ -173,5 +177,9 @@ namespace ExercisesApp.Controllers
 
             return Ok(exercises);
         }
+
+
+
     }
+
 }
