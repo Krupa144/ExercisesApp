@@ -45,7 +45,6 @@ document.getElementById('productForm').addEventListener('submit', async function
             throw new Error(`Błąd podczas dodawania produktu: ${response.status}`);
         }
 
-        // Przekieruj z powrotem do listy produktów po udanym dodaniu
         window.location.href = 'foodList.html';
 
     } catch (error) {

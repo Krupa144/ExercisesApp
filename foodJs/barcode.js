@@ -23,7 +23,7 @@ async function searchProduct() {
         }
 
         const data = await res.json();
-        console.log("Received data:", data); // Debugging line
+        console.log("Received data:", data); 
 
         if (!data || !data.data) {
             throw new Error('Produkt nie znaleziony');
@@ -64,7 +64,7 @@ async function saveProduct() {
         return;
     }
 
-    console.log("Saving product:", currentProduct); // Debugging line
+    console.log("Saving product:", currentProduct); 
 
     try {
         document.getElementById('result').innerHTML += '<p>Zapisywanie...</p>';
@@ -84,7 +84,7 @@ async function saveProduct() {
         }
 
         const result = await response.json();
-        console.log("Saved product:", result); // Debugging line
+        console.log("Saved product:", result); 
         alert("Produkt zapisany!");
         resetForm();
         document.getElementById('result').innerHTML = '';

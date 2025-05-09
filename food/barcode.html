@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,29 +8,28 @@
     <link rel="stylesheet" href="/css/food.css">
     <title>Food Scanner</title>
     <style>
-      
     </style>
 </head>
 <body>
     <div class="scanner-container">
-        <h2 class="scanner-title">Wyszukaj produkt po kodzie kreskowym</h2>
-        <input type="text" id="barcodeInput" class="barcode-input" placeholder="Wprowadź kod kreskowy" />
+        <h2 class="scanner-title">Search Product by Barcode</h2>
+        <input type="text" id="barcodeInput" class="barcode-input" placeholder="Enter barcode" />
         <button class="search-btn" onclick="searchProduct()">
-            <i class="bi bi-upc-scan"></i> Szukaj produktu
+            <i class="bi bi-upc-scan"></i> Search Product
         </button>
 
         <div id="result" class="food-info" style="display: none;">
-            <p><strong>Nazwa:</strong> <span id="name">Brak danych</span></p>
-            <p><strong>Marka:</strong> <span id="brand">Brak danych</span></p>
-            <p><strong>Kalorie:</strong> <span id="calories">0</span> kcal</p>
-            <p><strong>Białko:</strong> <span id="protein">0</span> g</p>
-            <p><strong>Węglowodany:</strong> <span id="carbs">0</span> g</p>
-            <p><strong>Tłuszcze:</strong> <span id="fats">0</span> g</p>
-            <p><strong>Cukry:</strong> <span id="sugars">0</span> g</p>
-            <p><strong>Tł. nasycone:</strong> <span id="saturatedFat">0</span> g</p>
-            <p><strong>Sól:</strong> <span id="salt">0</span> g</p>
+            <p><strong>Name:</strong> <span id="name">No data</span></p>
+            <p><strong>Brand:</strong> <span id="brand">No data</span></p>
+            <p><strong>Calories:</strong> <span id="calories">0</span> kcal</p>
+            <p><strong>Protein:</strong> <span id="protein">0</span> g</p>
+            <p><strong>Carbohydrates:</strong> <span id="carbs">0</span> g</p>
+            <p><strong>Fats:</strong> <span id="fats">0</span> g</p>
+            <p><strong>Sugars:</strong> <span id="sugars">0</span> g</p>
+            <p><strong>Saturated Fat:</strong> <span id="saturatedFat">0</span> g</p>
+            <p><strong>Salt:</strong> <span id="salt">0</span> g</p>
             <button class="save-btn" onclick="saveProduct()">
-                <i class="bi bi-save"></i> Zapisz do bazy
+                <i class="bi bi-save"></i> Save to Database
             </button>
         </div>
     </div>

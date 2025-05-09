@@ -1,8 +1,7 @@
-document.addEventListener("DOMContentLoaded", async () => {  // Dodaj async tutaj
+document.addEventListener("DOMContentLoaded", async () => {  
     const today = new Date().getDay();
     let reminderMessage = "";
 
-    // Ustawienie wiadomości na podstawie dnia tygodnia
     switch (today) {
         case 0: 
             reminderMessage = "today is rest day";
@@ -33,20 +32,18 @@ document.addEventListener("DOMContentLoaded", async () => {  // Dodaj async tuta
     const reminderElement = document.getElementById("reminderMessage");
     reminderElement.textContent = reminderMessage;
 
-    // Pobranie tokenu JWT z sessionStorage
-    const token = sessionStorage.getItem("authToken");  // Używamy sessionStorage
+    const token = sessionStorage.getItem("authToken");  
 
     if (!token) {
         console.error("Brak tokenu JWT");
         return;
     }
 
-    // Wykonanie zapytania do API
     try {
         const response = await fetch("https://localhost:44300/api/exercises/DailyPlan", {
             method: "GET",
             headers: {
-                "Authorization": "Bearer " + token, // Wysyłanie tokenu JWT w nagłówku
+                "Authorization": "Bearer " + token, 
             }
         });
 
@@ -59,13 +56,11 @@ document.addEventListener("DOMContentLoaded", async () => {  // Dodaj async tuta
 
         const exerciseList = document.getElementById("exerciseList");
 
-        // Sprawdzanie, czy są dane do wyświetlenia
         if (data.length === 0) {
             exerciseList.innerHTML = "<li class='list-group-item'>Brak ćwiczeń na dziś.</li>";
         } else {
-            exerciseList.innerHTML = ""; // Czyszczenie listy przed dodaniem nowych elementów
+            exerciseList.innerHTML = ""; 
 
-            // Tworzenie elementów listy dla każdego ćwiczenia
             data.forEach(exercise => {
                 const item = document.createElement("li");
                 item.className = "list-group-item";

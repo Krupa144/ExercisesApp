@@ -1,4 +1,3 @@
-// Funkcja do pobierania tokena JWT
 function getAuthToken() {
     return sessionStorage.getItem('authToken');
 }
@@ -6,20 +5,18 @@ function getAuthToken() {
 let macrosChart = null;
 let editModal = null;
 
-// Inicjalizacja po załadowaniu strony
 document.addEventListener('DOMContentLoaded', function() {
     editModal = new bootstrap.Modal(document.getElementById('editProductModal'));
     loadProducts();
 });
 
-// Ładowanie produktów
 async function loadProducts() {
     const token = getAuthToken();
     const errorElement = document.getElementById('error');
     errorElement.style.display = 'none';
 
     if (!token) {
-        showError("Brak autoryzacji. Zaloguj się ponownie.");
+        showError("Authorization missing. Please log in again.");
         return;
     }
 
@@ -34,9 +31,9 @@ async function loadProducts() {
 
         if (!response.ok) {
             if (response.status === 401) {
-                throw new Error("Brak autoryzacji lub błąd tokena JWT.");
+                throw new Error("Authorization or JWT token error.");
             } else {
-                throw new Error(`Błąd serwera: ${response.status}`);
+                throw new Error(`Server error: ${response.status}`);
             }
         }
 
@@ -45,18 +42,17 @@ async function loadProducts() {
         updateMacrosChart(products);
 
     } catch (error) {
-        console.error("Błąd podczas ładowania produktów:", error);
-        showError(`Nie udało się załadować produktów: ${error.message}`);
+        console.error("Error loading products:", error);
+        showError(`Failed to load products: ${error.message}`);
     }
 }
 
-// Wyświetlanie produktów
 function displayProducts(products) {
     const list = document.getElementById('productsList');
     list.innerHTML = '';
 
     if (products.length === 0) {
-        list.innerHTML = '<div class="col-12"><p class="text-muted">Brak produktów na dzisiaj.</p></div>';
+        list.innerHTML = '<div class="col-12"><p class="text-muted">No products for today.</p></div>';
         return;
     }
 
@@ -70,28 +66,26 @@ function displayProducts(products) {
         const cardBody = document.createElement('div');
         cardBody.className = 'card-body';
         
-        // Informacje o produkcie
         cardBody.innerHTML = `
             <h5 class="card-title">${product.name}</h5>
             ${product.brand ? `<p class="card-subtitle text-muted mb-2">${product.brand}</p>` : ''}
             <div class="mb-2">
                 <span class="badge bg-primary nutrition-badge">${product.calories} kcal</span>
-                ${product.protein ? `<span class="badge bg-success nutrition-badge">B: ${product.protein}g</span>` : ''}
-                ${product.carbs ? `<span class="badge bg-warning nutrition-badge">W: ${product.carbs}g</span>` : ''}
-                ${product.fats ? `<span class="badge bg-danger nutrition-badge">T: ${product.fats}g</span>` : ''}
+                ${product.protein ? `<span class="badge bg-success nutrition-badge">P: ${product.protein}g</span>` : ''}
+                ${product.carbs ? `<span class="badge bg-warning nutrition-badge">C: ${product.carbs}g</span>` : ''}
+                ${product.fats ? `<span class="badge bg-danger nutrition-badge">F: ${product.fats}g</span>` : ''}
             </div>
-            ${product.consumedAt ? `<p class="card-text small text-muted">Spożyto: ${new Date(product.consumedAt).toLocaleTimeString()}</p>` : ''}
+            ${product.consumedAt ? `<p class="card-text small text-muted">Consumed: ${new Date(product.consumedAt).toLocaleTimeString()}</p>` : ''}
         `;
         
-        // Przyciski akcji
         const buttons = document.createElement('div');
         buttons.className = 'action-buttons mt-3';
         buttons.innerHTML = `
             <button class="btn btn-sm btn-outline-primary edit-btn me-2" data-id="${product.id}">
-                <i class="bi bi-pencil"></i> Edytuj
+                <i class="bi bi-pencil"></i> Edit
             </button>
             <button class="btn btn-sm btn-outline-danger delete-btn" data-id="${product.id}">
-                <i class="bi bi-trash"></i> Usuń
+                <i class="bi bi-trash"></i> Delete
             </button>
         `;
         cardBody.appendChild(buttons);
@@ -101,7 +95,6 @@ function displayProducts(products) {
         list.appendChild(col);
     });
 
-    // Dodanie event listenerów do przycisków
     document.querySelectorAll('.edit-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             openEditModal(this.getAttribute('data-id'));
@@ -115,11 +108,9 @@ function displayProducts(products) {
     });
 }
 
-// Aktualizacja wykresu makroskładników
 function updateMacrosChart(products) {
     const ctx = document.getElementById('macrosChart').getContext('2d');
     
-    // Oblicz sumy makroskładników
     const totals = {
         protein: 0,
         carbs: 0,
@@ -134,27 +125,23 @@ function updateMacrosChart(products) {
         totals.calories += product.calories || 0;
     });
 
-    // Jeśli wykres już istnieje, zaktualizuj dane
     if (macrosChart) {
         macrosChart.data.datasets[0].data = [totals.protein, totals.carbs, totals.fats];
         macrosChart.update();
-        
-        // Aktualizuj podsumowanie
         updateMacrosSummary(totals);
         return;
     }
 
-    // Stwórz nowy wykres
     macrosChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Białko (g)', 'Węglowodany (g)', 'Tłuszcze (g)'],
+            labels: ['Protein (g)', 'Carbs (g)', 'Fats (g)'],
             datasets: [{
                 data: [totals.protein, totals.carbs, totals.fats],
                 backgroundColor: [
-                    '#00D97E', // zielony - białko
-                    '#5F33E0', // fioletowy - węglowodany
-                    '#FF3D57'  // czerwony - tłuszcze
+                    '#00D97E',
+                    '#5F33E0',
+                    '#FF3D57'
                 ],
                 borderWidth: 0
             }]
@@ -165,10 +152,10 @@ function updateMacrosChart(products) {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        boxWidth: 7, // Mniejsze kwadraty legendy
-                        padding: 7, // Mniejszy padding
+                        boxWidth: 7,
+                        padding: 7,
                         font: {
-                            size: 19 // Mniejsza czcionka
+                            size: 19
                         }
                     }
                 },
@@ -179,22 +166,18 @@ function updateMacrosChart(products) {
                         }
                     }
                 }
-                
             },
-            cutout: '75%', // Większy otwór w środku
-            radius: '30%' // Mniejszy ogólny rozmiar wykresu
+            cutout: '75%',
+            radius: '30%'
         }
     });
 
-    // Dodaj podsumowanie
     updateMacrosSummary(totals);
 }
 
-// Aktualizacja podsumowania makroskładników
 function updateMacrosSummary(totals) {
     const chartContainer = document.querySelector('#macrosChart').parentElement;
     
-    // Sprawdź czy podsumowanie już istnieje
     let summaryElement = chartContainer.querySelector('.macros-summary');
     
     if (!summaryElement) {
@@ -204,16 +187,15 @@ function updateMacrosSummary(totals) {
     }
     
     summaryElement.innerHTML = `
-        <p class="mb-1"><strong>Łącznie kalorii:</strong> ${totals.calories} kcal</p>
-        <p class="mb-1"><strong>B:</strong> ${totals.protein}g | <strong>W:</strong> ${totals.carbs}g | <strong>T:</strong> ${totals.fats}g</p>
+        <p class="mb-1"><strong>Total Calories:</strong> ${totals.calories} kcal</p>
+        <p class="mb-1"><strong>P:</strong> ${totals.protein}g | <strong>C:</strong> ${totals.carbs}g | <strong>F:</strong> ${totals.fats}g</p>
     `;
 }
 
-// Otwarcie modala do edycji
 async function openEditModal(productId) {
     const token = getAuthToken();
     if (!token) {
-        showError("Brak autoryzacji. Zaloguj się ponownie.");
+        showError("Authorization missing. Please log in again.");
         return;
     }
 
@@ -225,12 +207,11 @@ async function openEditModal(productId) {
         });
 
         if (!response.ok) {
-            throw new Error(`Błąd podczas pobierania produktu: ${response.status}`);
+            throw new Error(`Error retrieving product: ${response.status}`);
         }
 
         const product = await response.json();
         
-        // Wypełnij formularz edycji
         document.getElementById('editProductId').value = product.id;
         document.getElementById('editProductName').value = product.name;
         document.getElementById('editProductBrand').value = product.brand || '';
@@ -244,18 +225,17 @@ async function openEditModal(productId) {
         editModal.show();
 
     } catch (error) {
-        console.error("Błąd podczas otwierania edycji:", error);
-        showError(`Nie udało się załadować produktu do edycji: ${error.message}`);
+        console.error("Error opening edit modal:", error);
+        showError(`Failed to load product for editing: ${error.message}`);
     }
 }
 
-// Zapisz edytowany produkt
 document.getElementById('saveEditBtn').addEventListener('click', async function() {
     const token = getAuthToken();
     const productId = document.getElementById('editProductId').value;
     
     if (!token || !productId) {
-        showError("Brak autoryzacji lub produktu do edycji.");
+        showError("Authorization missing or no product to edit.");
         return;
     }
 
@@ -282,27 +262,26 @@ document.getElementById('saveEditBtn').addEventListener('click', async function(
         });
 
         if (!response.ok) {
-            throw new Error(`Błąd podczas aktualizacji produktu: ${response.status}`);
+            throw new Error(`Error updating product: ${response.status}`);
         }
 
         editModal.hide();
         loadProducts();
 
     } catch (error) {
-        console.error("Błąd podczas aktualizacji produktu:", error);
-        showError(`Nie udało się zaktualizować produktu: ${error.message}`);
+        console.error("Error updating product:", error);
+        showError(`Failed to update product: ${error.message}`);
     }
 });
 
-// Usuwanie produktu
 async function deleteProduct(productId) {
-    if (!confirm("Czy na pewno chcesz usunąć ten produkt?")) {
+    if (!confirm("Are you sure you want to delete this product?")) {
         return;
     }
 
     const token = getAuthToken();
     if (!token) {
-        showError("Brak autoryzacji. Zaloguj się ponownie.");
+        showError("Authorization missing. Please log in again.");
         return;
     }
 
@@ -315,23 +294,21 @@ async function deleteProduct(productId) {
         });
 
         if (!response.ok) {
-            throw new Error(`Błąd podczas usuwania produktu: ${response.status}`);
+            throw new Error(`Error deleting product: ${response.status}`);
         }
 
         loadProducts();
 
     } catch (error) {
-        console.error("Błąd podczas usuwania produktu:", error);
-        showError(`Nie udało się usunąć produktu: ${error.message}`);
+        console.error("Error deleting product:", error);
+        showError(`Failed to delete product: ${error.message}`);
     }
 }
 
-// Wyświetlanie błędów
 function showError(message) {
     const errorElement = document.getElementById('error');
     errorElement.innerText = message;
     errorElement.style.display = 'block';
 }
 
-// Stała z adresem API
 const apiBaseUrl = 'https://localhost:44300/api/FoodApi';

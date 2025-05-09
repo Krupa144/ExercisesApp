@@ -185,6 +185,5 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("exercise-date-filter").value = today;
 });
 
-// Dodaj później funkcje editExercise(), updateExercise(), deleteExercise(), cancelEdit()
 
 document.addEventListener("DOMContentLoaded", loadExercises);
