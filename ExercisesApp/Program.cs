@@ -13,7 +13,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAllOrigins", policy =>
     {
         policy
-            .WithOrigins("http://127.0.0.1:5500")
+            .WithOrigins("http://127.0.0.1:5500", "https://krupa144.github.io")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials(); 
