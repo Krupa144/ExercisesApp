@@ -1,0 +1,146 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #f8f9fa;
+    --accent-color: #e9ecef;
+    --text-color: #212529;
+    --light-gray: #f1f3f5;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --transition: all 0.2s ease-in-out;
+  }
+  
+  body {
+    background-color: white;
+    color: var(--text-color);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 900px;
+  }
+  
+  h1, h2 {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  
+  .d-flex.gap-3 {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Tabela */
+  table {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+  }
+  
+  table thead {
+    background-color: var(--secondary-color);
+  }
+  
+  table th, table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  table tbody tr:hover {
+    background-color: var(--light-gray);
+    transition: var(--transition);
+  }
+  
+  #editForm {
+    background-color: white;
+    padding: 24px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--accent-color);
+  }
+  
+  .btn {
+    border-radius: var(--border-radius);
+    font-weight:10px;
+    transition: var(--transition);
+  }
+  
+  .btn-outline-dark {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    background-color: #212529;
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--light-gray);
+  }
+  
+  /* Formularze */
+  .form-control, .form-select {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+    padding: 10px 15px;
+  }
+  
+  .form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .bi {
+    vertical-align: middle;
+  }
+
+  
+  
+  @media (max-width: 768px) {
+    .d-flex.gap-3 {
+      flex-direction: column;
+    }
+  
+    .form-control, .form-select {
+      width: 100% !important;
+    }
+  
+    table thead {
+      font-size: 0.875rem;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  table tbody tr {
+    animation: fadeInUp 0.3s ease-out forwards;
+  }
+  

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/food.css">
+    <title>Add Product</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">Add New Product</h1>
+        
+        <div class="d-flex justify-content-between mb-4">
+            <a href="foodList.html" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Back
+            </a>
+        </div>
+        
+        <div id="error" class="alert alert-danger" style="display: none;"></div>
+        
+        <!-- Add Product Form -->
+        <div id="addProductForm" class="card">
+            <div class="card-body">
+                <form id="productForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="productName" class="form-label">Name*</label>
+                            <input type="text" class="form-control" id="productName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="productBrand" class="form-label">Brand</label>
+                            <input type="text" class="form-control" id="productBrand">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productCalories" class="form-label">Calories (kcal)*</label>
+                            <input type="number" class="form-control" id="productCalories" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productCarbs" class="form-label">Carbohydrates (g)</label>
+                            <input type="number" step="0.1" class="form-control" id="productCarbs">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productProtein" class="form-label">Protein (g)</label>
+                            <input type="number" step="0.1" class="form-control" id="productProtein">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productFats" class="form-label">Fats (g)</label>
+                            <input type="number" step="0.1" class="form-control" id="productFats">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productSalt" class="form-label">Salt (g)</label>
+                            <input type="number" step="0.1" class="form-control" id="productSalt">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productSugars" class="form-label">Sugars (g)</label>
+                            <input type="number" step="0.1" class="form-control" id="productSugars">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productSaturatedFat" class="form-label">Saturated Fat (g)</label>
+                            <input type="number" step="0.1" class="form-control" id="productSaturatedFat">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productBarcode" class="form-label">Barcode</label>
+                            <input type="text" class="form-control" id="productBarcode">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary me-2">
+                            <i class="bi bi-check"></i> Save Product
+                        </button>
+                        <a href="foodList.html" class="btn btn-outline-secondary">
+                            <i class="bi bi-x"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../foodJs/addFood.js"></script>
+</body>
+</html>
