@@ -1,18 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ExercisesApp.Models
+﻿namespace ExercisesApp.Dto
 {
-    public class FoodUpdateDto
+    public class FoodDto
     {
-        [Required]
         public int Id { get; set; }
 
-        [Required]
         public string? Name { get; set; }
-
-        [Required]
         public string? Barcode { get; set; }
-
         public string? Brand { get; set; }
 
         public int? Calories { get; set; }
@@ -24,5 +17,7 @@ namespace ExercisesApp.Models
         public float? Salt { get; set; }
 
         public DateTime? ConsumedAt { get; set; }
+
+        public DateTime CreatedAt { get; set; }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ExercisesApp.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using ExercisesApp.Models;
 
 namespace ExercisesApp.Data
 {

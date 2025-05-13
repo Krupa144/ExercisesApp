@@ -1,4 +1,4 @@
-﻿using ExercisesApp.Models;
+﻿using ExercisesApp.Dto;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;

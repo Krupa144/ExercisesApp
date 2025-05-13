@@ -1,4 +1,5 @@
 ﻿using ExercisesApp.Data;
+using ExercisesApp.Dto;
 using ExercisesApp.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

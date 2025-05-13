@@ -1,4 +1,6 @@
-﻿namespace ExercisesApp.Models
+﻿using ExercisesApp.Models;
+
+namespace ExercisesApp.Dto
 {
     public class CreateExerciseDto
     {

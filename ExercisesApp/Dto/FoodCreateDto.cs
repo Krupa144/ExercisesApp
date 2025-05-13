@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ExercisesApp.Models
+namespace ExercisesApp.Dto
 {
     public class FoodCreateDto
     {

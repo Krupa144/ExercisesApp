@@ -16,11 +16,11 @@ builder.Services.AddCors(options =>
             .WithOrigins("http://127.0.0.1:5500", "https://krupa144.github.io")
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .AllowCredentials(); 
+            .AllowCredentials();
     });
 });
 
-builder.Services.AddHttpClient(); 
+builder.Services.AddHttpClient();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -42,7 +42,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = false; 
+    options.RequireHttpsMetadata = false;
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -64,6 +64,8 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation(); 
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -77,14 +79,18 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseRouting();
 
-app.UseCors("AllowAllOrigins");       
-app.UseAuthentication();              
-app.UseAuthorization();              
+app.UseCors("AllowAllOrigins");
 
-app.UseSession();                     
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllers();
+app.MapRazorPages(); 
 
 app.Run();

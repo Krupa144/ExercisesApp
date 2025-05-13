@@ -1,4 +1,4 @@
-﻿namespace ExercisesApp.Models
+﻿namespace ExercisesApp.Dto
 {
     public class LoginDto
     {
