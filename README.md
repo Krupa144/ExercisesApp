@@ -1,9 +1,6 @@
 Food & Workout Tracker
 This application allows users to track workouts and food intake. It includes features for adding exercises, controlling macros, scanning food products using barcodes, and managing data securely with user authentication.
 
-https://krupa144.github.io/ExercisesApp/start.html
-
-
 Features
 User registration and login with ASP.NET Identity
 
@@ -20,7 +17,7 @@ Integration with the OpenFoodFacts API for automatic product data
 Progress tracking by comparing current and past workout results
 
 Technologies Used
-Backend: .NET (ASP.NET Core)
+Backend: .NET (ASP.NET Core), RAZOR
 
 ORM: Entity Framework Core
 
