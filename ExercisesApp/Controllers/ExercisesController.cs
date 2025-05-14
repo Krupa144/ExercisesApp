@@ -82,10 +82,10 @@ namespace ExercisesApp.Controllers
 
         [HttpPut("{id}")]
         [Authorize]
-        public async Task<IActionResult> UpdateExercise(int id, Exercise updatedExercise)
+        public async Task<IActionResult> UpdateExercise(int id, [FromBody] UpdateExerciseDto dto)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (id != updatedExercise.Id)
+            if (id != dto.Id)
                 return BadRequest("ID ćwiczenia nie zgadza się.");
 
             var exercise = await _context.Exercises
@@ -94,22 +94,17 @@ namespace ExercisesApp.Controllers
             if (exercise == null)
                 return NotFound("Ćwiczenie nie znalezione.");
 
-            exercise.Name = updatedExercise.Name;
-            exercise.Sets = updatedExercise.Sets;
-            exercise.Reps = updatedExercise.Reps;
-            exercise.Weight = updatedExercise.Weight;
-            exercise.Category = updatedExercise.Category;
-            exercise.Date = updatedExercise.Date;
-
-            if (string.IsNullOrEmpty(exercise.UserId))
-            {
-                exercise.UserId = userId;
-            }
+            exercise.Name = dto.Name;
+            exercise.Sets = dto.Sets;
+            exercise.Reps = dto.Reps;
+            exercise.Weight = dto.Weight;
+            exercise.Category = dto.Category;
+            exercise.Date = dto.Date;
 
             await _context.SaveChangesAsync();
-
             return NoContent();
         }
+
 
 
         [HttpDelete("{id}")]
