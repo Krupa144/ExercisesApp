@@ -1,0 +1,470 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\controllers\\weightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\controllers\\weightcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\controllers\\exercisescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\controllers\\exercisescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\models\\exercise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\models\\exercise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\models\\weightentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\models\\weightentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\models\\userweight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\models\\userweight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\models\\food.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\updateexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\updateexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\exercisesapp.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\exercisesapp.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\foodupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\foodupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\foodinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\foodinfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\foodcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\foodcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\fooddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\fooddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\dto\\createexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\dto\\createexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\exercisesapp.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\exercisesapp.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|c:\\users\\kacpi\\source\\repos\\exercisesapp\\exercisesapp\\migrations\\20250505172609_addproducttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C06AA7A5-8FEC-4DA4-B47D-E22BAFD0A7F2}|ExercisesApp\\ExercisesApp.csproj|solutionrelative:exercisesapp\\migrations\\20250505172609_addproducttable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ExercisesApp\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ExercisesApp\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-15T19:42:24.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ExercisesApp\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAkwH8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T11:48:21.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "ExercisesApp\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T18:42:02.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "ExercisesApp\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Pages\\Index.cshtml",
+              "RelativeToolTip": "ExercisesApp\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T19:49:03.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "ExercisesApp\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T19:49:21.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Models\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "ExercisesApp\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:06:11.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Exercise.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\Exercise.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Models\\Exercise.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\Exercise.cs",
+              "RelativeToolTip": "ExercisesApp\\Models\\Exercise.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:08:26.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ExercisesController.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\ExercisesController.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Controllers\\ExercisesController.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\ExercisesController.cs",
+              "RelativeToolTip": "ExercisesApp\\Controllers\\ExercisesController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAcwKwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:06:18.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FoodController.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\FoodController.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Controllers\\FoodController.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\FoodController.cs",
+              "RelativeToolTip": "ExercisesApp\\Controllers\\FoodController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFgBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:08:04.735Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Program.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Program.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Program.cs",
+              "RelativeToolTip": "ExercisesApp\\Program.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAYwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T19:48:11.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeightController.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\WeightController.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Controllers\\WeightController.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Controllers\\WeightController.cs",
+              "RelativeToolTip": "ExercisesApp\\Controllers\\WeightController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:13:47.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserWeight.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\UserWeight.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Models\\UserWeight.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\UserWeight.cs",
+              "RelativeToolTip": "ExercisesApp\\Models\\UserWeight.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:12:04.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\Product.cs",
+              "RelativeToolTip": "ExercisesApp\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:08:21.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Food.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\Food.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Models\\Food.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\Food.cs",
+              "RelativeToolTip": "ExercisesApp\\Models\\Food.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:08:28.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ExercisesApp\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ExercisesApp\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-12T19:53:54.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WeightEntry.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\WeightEntry.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Models\\WeightEntry.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Models\\WeightEntry.cs",
+              "RelativeToolTip": "ExercisesApp\\Models\\WeightEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:25:11.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\RegisterDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:08:23.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UpdateExerciseDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\UpdateExerciseDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\UpdateExerciseDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\UpdateExerciseDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\UpdateExerciseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:06:05.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\LoginDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\LoginDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:08:13.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FoodUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodUpdateDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\FoodUpdateDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodUpdateDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\FoodUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:08:12.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ExercisesApp.http",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\ExercisesApp.http",
+              "RelativeDocumentMoniker": "ExercisesApp\\ExercisesApp.http",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\ExercisesApp.http",
+              "RelativeToolTip": "ExercisesApp\\ExercisesApp.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-05-14T08:08:33.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FoodCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodCreateDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\FoodCreateDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodCreateDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\FoodCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-14T08:08:11.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CreateExerciseDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\CreateExerciseDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\CreateExerciseDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\CreateExerciseDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\CreateExerciseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:08:20.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FoodDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\FoodDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\FoodDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:08:22.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FoodInfoDto.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodInfoDto.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Dto\\FoodInfoDto.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Dto\\FoodInfoDto.cs",
+              "RelativeToolTip": "ExercisesApp\\Dto\\FoodInfoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T22:08:22.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ExercisesApp.csproj.Backup.tmp",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\ExercisesApp.csproj.Backup.tmp",
+              "RelativeDocumentMoniker": "ExercisesApp\\ExercisesApp.csproj.Backup.tmp",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\ExercisesApp.csproj.Backup.tmp",
+              "RelativeToolTip": "ExercisesApp\\ExercisesApp.csproj.Backup.tmp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-12T20:03:01.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ExercisesApp\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\appsettings.Development.json",
+              "RelativeToolTip": "ExercisesApp\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-12T18:42:07.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "20250505172609_AddProductTable.cs",
+              "DocumentMoniker": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Migrations\\20250505172609_AddProductTable.cs",
+              "RelativeDocumentMoniker": "ExercisesApp\\Migrations\\20250505172609_AddProductTable.cs",
+              "ToolTip": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\Migrations\\20250505172609_AddProductTable.cs",
+              "RelativeToolTip": "ExercisesApp\\Migrations\\20250505172609_AddProductTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-12T18:42:02.148Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

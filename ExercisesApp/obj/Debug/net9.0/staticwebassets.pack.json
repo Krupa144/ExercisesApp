@@ -1,0 +1,145 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\.gitattributes",
+      "PackagePath": "staticwebassets\\.gitattributes"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\.gitignore",
+      "PackagePath": "staticwebassets\\.gitignore"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\AddExercise.html",
+      "PackagePath": "staticwebassets\\AddExercise.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\README.md",
+      "PackagePath": "staticwebassets\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\css\\exercises.css",
+      "PackagePath": "staticwebassets\\css\\exercises.css"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\css\\food.css",
+      "PackagePath": "staticwebassets\\css\\food.css"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\css\\views.css",
+      "PackagePath": "staticwebassets\\css\\views.css"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\exercises\\fullbody.html",
+      "PackagePath": "staticwebassets\\exercises\\fullbody.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\exercises\\legs.html",
+      "PackagePath": "staticwebassets\\exercises\\legs.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\exercises\\pull.html",
+      "PackagePath": "staticwebassets\\exercises\\pull.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\exercises\\push.html",
+      "PackagePath": "staticwebassets\\exercises\\push.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\foodJs\\addFood.js",
+      "PackagePath": "staticwebassets\\foodJs\\addFood.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\foodJs\\barcode.js",
+      "PackagePath": "staticwebassets\\foodJs\\barcode.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\foodJs\\foodList.js",
+      "PackagePath": "staticwebassets\\foodJs\\foodList.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\food\\addFood.html",
+      "PackagePath": "staticwebassets\\food\\addFood.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\food\\barcode.html",
+      "PackagePath": "staticwebassets\\food\\barcode.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\food\\foodList.html",
+      "PackagePath": "staticwebassets\\food\\foodList.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\identity.html",
+      "PackagePath": "staticwebassets\\identity.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\js\\auth.js",
+      "PackagePath": "staticwebassets\\js\\auth.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\js\\daily.js",
+      "PackagePath": "staticwebassets\\js\\daily.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\js\\exerciseForm.js",
+      "PackagePath": "staticwebassets\\js\\exerciseForm.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\js\\exercises.js",
+      "PackagePath": "staticwebassets\\js\\exercises.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\js\\registerForm.js",
+      "PackagePath": "staticwebassets\\js\\registerForm.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\js\\weight.js",
+      "PackagePath": "staticwebassets\\js\\weight.js"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\login.html",
+      "PackagePath": "staticwebassets\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\start.html",
+      "PackagePath": "staticwebassets\\start.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\treinings.html",
+      "PackagePath": "staticwebassets\\treinings.html"
+    },
+    {
+      "Id": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\user\\weight.html",
+      "PackagePath": "staticwebassets\\user\\weight.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ExercisesApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ExercisesApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.ExercisesApp.props",
+      "PackagePath": "build\\ExercisesApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.ExercisesApp.props",
+      "PackagePath": "buildMultiTargeting\\ExercisesApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.ExercisesApp.props",
+      "PackagePath": "buildTransitive\\ExercisesApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

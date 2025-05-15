@@ -23,7 +23,7 @@
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:44300", // Usuń HTTP z aplikacji, tylko HTTPS
+      "applicationUrl": "https://localhost:44300", 
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
