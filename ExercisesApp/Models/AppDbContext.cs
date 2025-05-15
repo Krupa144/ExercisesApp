@@ -50,5 +50,7 @@ namespace ExercisesApp.Data
                       .HasMaxLength(100);
             });
         }
+        public DbSet<UserWeight> UserWeights { get; set; }
+
     }
 }

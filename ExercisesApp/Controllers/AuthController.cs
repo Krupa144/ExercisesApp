@@ -31,7 +31,7 @@ namespace ExercisesApp.Controllers
             var user = await _userManager.FindByEmailAsync(dto.Email);
             if (user == null)
             {
-                return Unauthorized(new { message = "Niepoprawny email lub hasło." });
+                return Unauthorized(new { message = "Invalid email or password." });
             }
 
             var result = await _signInManager.PasswordSignInAsync(user, dto.Password, false, false);
@@ -65,7 +65,7 @@ namespace ExercisesApp.Controllers
                 return Ok(new { token = tokenString, userId = user.Id });
             }
 
-            return Unauthorized(new { message = "Niepoprawne hasło." });
+            return Unauthorized(new { message = "Incorrect password." });
         }
 
         [HttpPost("register")]
@@ -74,7 +74,7 @@ namespace ExercisesApp.Controllers
             var existingUser = await _userManager.FindByEmailAsync(dto.Email);
             if (existingUser != null)
             {
-                return BadRequest(new { message = "Użytkownik z tym emailem już istnieje." });
+                return BadRequest(new { message = "A user with this email already exists." });
             }
 
             var user = new ApplicationUser
@@ -88,7 +88,7 @@ namespace ExercisesApp.Controllers
 
             if (!result.Succeeded)
             {
-                return BadRequest(new { message = "Błąd przy rejestracji użytkownika.", errors = result.Errors });
+                return BadRequest(new { message = "Error occurred during user registration.", errors = result.Errors });
             }
 
             var claims = new[]

@@ -29,7 +29,6 @@
     margin-bottom: 1.5rem;
   }
   
-  /* Tabela */
   table {
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -96,7 +95,6 @@
     background-color: var(--light-gray);
   }
   
-  /* Formularze */
   .form-control, .form-select {
     border-radius: var(--border-radius);
     border: 1px solid var(--accent-color);

@@ -36,7 +36,6 @@ namespace ExercisesApp.Controllers
             return Ok(exercises);
         }
 
-
         [HttpGet("{id}")]
         [Authorize]
         public async Task<ActionResult<Exercise>> GetExerciseById(int id)
@@ -59,7 +58,7 @@ namespace ExercisesApp.Controllers
 
             if (string.IsNullOrEmpty(userId))
             {
-                return Unauthorized("Nie można ustalić tożsamości użytkownika.");
+                return Unauthorized("Unable to determine user identity.");
             }
 
             var exercise = new Exercise
@@ -74,11 +73,10 @@ namespace ExercisesApp.Controllers
             };
 
             _context.Exercises.Add(exercise);
-             await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetExerciseById), new { id = exercise.Id }, exercise);
         }
-
 
         [HttpPut("{id}")]
         [Authorize]
@@ -86,13 +84,13 @@ namespace ExercisesApp.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (id != dto.Id)
-                return BadRequest("ID ćwiczenia nie zgadza się.");
+                return BadRequest("Exercise ID does not match.");
 
             var exercise = await _context.Exercises
                 .FirstOrDefaultAsync(e => e.Id == id && e.UserId == userId);
 
             if (exercise == null)
-                return NotFound("Ćwiczenie nie znalezione.");
+                return NotFound("Exercise not found.");
 
             exercise.Name = dto.Name;
             exercise.Sets = dto.Sets;
@@ -105,14 +103,12 @@ namespace ExercisesApp.Controllers
             return NoContent();
         }
 
-
-
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> DeleteExercise(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            Console.WriteLine($"Próba usunięcia ćwiczenia o ID: {id} przez użytkownika: {userId}");
+            Console.WriteLine($"Attempt to delete exercise with ID: {id} by user: {userId}");
 
             var exercise = await _context.Exercises
                 .FirstOrDefaultAsync(e => e.Id == id && e.UserId == userId);
@@ -126,7 +122,6 @@ namespace ExercisesApp.Controllers
             return NoContent();
         }
 
-
         [HttpGet("DailyPlan")]
         [Authorize]
         public IActionResult DailyPlan()
@@ -134,7 +129,7 @@ namespace ExercisesApp.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userId))
             {
-                return Unauthorized("Brak tokenu JWT lub token jest nieprawidłowy.");
+                return Unauthorized("Missing or invalid JWT token.");
             }
 
             var today = DateTime.Today.DayOfWeek;
@@ -157,7 +152,7 @@ namespace ExercisesApp.Controllers
                     plannedCategory = Category.FullBody;
                     break;
                 default:
-                    return BadRequest("Brak planu treningowego na weekend.");
+                    return BadRequest("No workout plan for the weekend.");
             }
 
             var exercises = _context.Exercises
@@ -173,9 +168,5 @@ namespace ExercisesApp.Controllers
 
             return Ok(exercises);
         }
-
-
-
     }
-
 }

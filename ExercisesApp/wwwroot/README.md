@@ -1,33 +1,53 @@
-Food & Workout Tracker
-This application allows users to track workouts and food intake. It includes features for adding exercises, controlling macros, scanning food products using barcodes, and managing data securely with user authentication.
+﻿Food & Workout Tracker
+Food & Workout Tracker is a full-stack web application that helps users monitor their workouts and nutritional intake. The app provides intuitive features for adding and managing exercises, tracking body weight and macros, and scanning food products via barcodes with real-time data fetched from OpenFoodFacts. Secure user authentication ensures that all data is private and user-specific.
 
-https://krupa144.github.io/ExercisesApp/login.html
+🔗 Live Demo: ExercisesApp
 
+🚀 Features
+🔐 User Authentication
 
-Features
-User registration and login with ASP.NET Identity
+Secure registration and login using ASP.NET Identity
 
-Adding and managing workout exercises
+🏋️ Workout Tracking
 
-Organizing exercises by categories
+Add, edit, and delete exercises
 
-Tracking nutritional intake
+Categorize workouts (Push, Pull, Legs, FullBody)
 
-Adding food products manually or via barcode
+Daily workout suggestions based on the day of the week
 
-Integration with the OpenFoodFacts API for automatic product data
+Progress tracking by comparing past and current performance
 
-Progress tracking by comparing current and past workout results
+🍽️ Food & Nutrition Tracking
 
-Technologies Used
-Backend: .NET (ASP.NET Core)
+Add food products manually or by scanning a barcode
+
+Automatic nutritional data fetch from OpenFoodFacts API
+
+View nutrition history per day
+
+⚖️ Body Weight Monitoring
+
+Log and review weight history over time
+
+🛠️ Technologies Used
+Backend: ASP.NET Core (.NET)
+
+Frontend: HTML, CSS, JavaScript, Bootstrap
+
+Database: SQL Server (Dockerized)
 
 ORM: Entity Framework Core
 
-Database: SQL Server, Docker
-
-Frontend: HTML, CSS, JavaScript, Boostrap
-
 Authentication: ASP.NET Identity
 
-External API: OpenFoodFacts (https://world.openfoodfacts.org)
+External API: OpenFoodFacts (https://world.openfoodfacts.org) 
+
+📦 Future Improvements (optional section)
+(Include if you’re actively developing or planning new features)
+
+Chart-based progress visualization
+
+Dark mode support
+
+Mobile-friendly layout
