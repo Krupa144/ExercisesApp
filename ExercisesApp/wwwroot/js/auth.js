@@ -7,7 +7,6 @@ if (getAuthToken()) {
     document.getElementById('mainPageDiv').style.display = 'block';
 }
 
-// Funkcja logowania
 document.getElementById('loginForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 

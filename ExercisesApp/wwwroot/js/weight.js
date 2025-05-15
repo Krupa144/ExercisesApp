@@ -1,4 +1,3 @@
-// weight.js
 
 const API_URL = "https://localhost:44300/api/Weight";
 const token = sessionStorage.getItem("authToken");
@@ -57,11 +56,9 @@ async function fetchTodayWeight() {
             return;
         }
 
-        // Formatujemy daty na YYYY-MM-DD
         const todayKey = new Date().toISOString().split('T')[0];
         const todayData = data.find(w => new Date(w.recordedAt).toISOString().split('T')[0] === todayKey);
 
-        // Szukamy wpisu sprzed około 30 dni (±2 dni)
         const oneMonthAgo = new Date();
         oneMonthAgo.setDate(oneMonthAgo.getDate() - 30);
         const rangeStart = new Date(oneMonthAgo);
@@ -74,7 +71,6 @@ async function fetchTodayWeight() {
             return d >= rangeStart && d <= rangeEnd;
         });
 
-        // Budujemy HTML
         let html = "";
 
         if (todayData) {
@@ -113,12 +109,9 @@ let weightChart = null;
 function drawChart(data) {
     const ctx = document.getElementById("weightChart").getContext("2d");
 
-    // Jeśli już jest wykres, niszczemy
     if (weightChart && typeof weightChart.destroy === "function") {
         weightChart.destroy();
     }
-
-    // Dane do wykresu
     const sorted = data.slice().sort((a, b) => new Date(a.recordedAt) - new Date(b.recordedAt));
     const labels = sorted.map(w => new Date(w.recordedAt).toLocaleDateString());
     const weights = sorted.map(w => w.weight);
@@ -157,7 +150,6 @@ function drawChart(data) {
     });
 }
 
-// Po załadowaniu strony
 if (token) {
     fetchTodayWeight();
 } else {
