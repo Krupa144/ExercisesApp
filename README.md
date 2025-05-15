@@ -1,30 +1,53 @@
 Food & Workout Tracker
-This application allows users to track workouts and food intake. It includes features for adding exercises, controlling macros, scanning food products using barcodes, and managing data securely with user authentication.
+Food & Workout Tracker is a full-stack web application that helps users monitor their workouts and nutritional intake. The app provides intuitive features for adding and managing exercises, tracking body weight and macros, and scanning food products via barcodes with real-time data fetched from OpenFoodFacts. Secure user authentication ensures that all data is private and user-specific.
 
-Features
-User registration and login with ASP.NET Identity
+🔗 Live Demo: ExercisesApp
 
-Adding and managing workout exercises
+🚀 Features
+🔐 User Authentication
 
-Organizing exercises by categories
+Secure registration and login using ASP.NET Identity
 
-Tracking nutritional intake
+🏋️ Workout Tracking
 
-Adding food products manually or via barcode
+Add, edit, and delete exercises
 
-Integration with the OpenFoodFacts API for automatic product data
+Categorize workouts (Push, Pull, Legs, Full Body)
 
-Progress tracking by comparing current and past workout results
+Daily workout suggestions based on the day of the week
 
-Technologies Used
-Backend: .NET (ASP.NET Core), RAZOR
+Progress tracking by comparing past and current performance
+
+🍽️ Food & Nutrition Tracking
+
+Add food products manually or by scanning a barcode
+
+Automatic nutritional data fetch from OpenFoodFacts API
+
+View nutrition history per day
+
+⚖️ Body Weight Monitoring
+
+Log and review weight history over time
+
+🛠️ Technologies Used
+Backend: ASP.NET Core (.NET)
+
+Frontend: HTML, CSS, JavaScript, Bootstrap
+
+Database: SQL Server (Dockerized)
 
 ORM: Entity Framework Core
 
-Database: SQL Server, Docker
-
-Frontend: HTML, CSS, JavaScript, Boostrap
-
 Authentication: ASP.NET Identity
 
-External API: OpenFoodFacts (https://world.openfoodfacts.org)
+External API: OpenFoodFacts
+
+📦 Future Improvements (optional section)
+(Include if you’re actively developing or planning new features)
+
+Chart-based progress visualization
+
+Dark mode support
+
+Mobile-friendly layout
