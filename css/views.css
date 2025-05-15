@@ -17,7 +17,9 @@ body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: #212529;
   line-height: 1.6;
+      height: 100%;
 }
+
 
 .site-header {
   background: linear-gradient(135deg, var(--secondary-color) 0%, #1a2530 100%);
@@ -78,7 +80,7 @@ body {
   border: none;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
   margin-bottom: 1.5rem;
 }
 
@@ -177,9 +179,8 @@ body {
 }
 
 .site-footer {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: var(--primary-color);
   color: var(--white);
-  padding: 2.5rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: auto;
 }
@@ -188,11 +189,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-
-.footer-copyright {
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
 }
 
 .footer-nav-list {
@@ -230,7 +226,9 @@ body {
 .footer-link i {
   font-size: 1.1rem;
 }
-
+.site-footer .text-muted {
+  color: var(--color-white) !important;
+}
 @media (max-width: 992px) {
   .header-content {
     flex-direction: column;
