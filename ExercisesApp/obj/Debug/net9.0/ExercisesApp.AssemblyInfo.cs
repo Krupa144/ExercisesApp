@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExercisesApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28fae327162d69d27890da47bccc5ba28903ac46")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e28b8f136d42a9274390ec793151e7ca3e658af1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExercisesApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExercisesApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
