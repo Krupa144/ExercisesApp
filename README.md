@@ -48,7 +48,7 @@
 
 ## 🌐 External API
 
-- **OpenFoodFacts API** — used to fetch detailed nutritional information about food products by barcode or name  
+- **OpenFoodFacts API** — used to fetch detailed nutritional information about food products by barcode
   `https://world.openfoodfacts.org/api`
 
 ---
