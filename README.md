@@ -18,7 +18,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=dotnet,docker,sql" />
+    <img src="https://skillicons.dev/icons?i=dotnet,docker" sql />
   </a>
 </p>
 
@@ -26,7 +26,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=HTML,CSS,JS,RAZOR" />
+    <img src="https://skillicons.dev/icons?i=html,css,js" />
   </a>
 </p>
 
@@ -42,6 +42,7 @@
 - **MVC**
 - **EF**
 - **Identity**
+- **Razor**
   
 ---
 
