@@ -24,7 +24,6 @@ C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\wwwroot\css\views.css
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\wwwroot\food\barcode.html
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\wwwroot\js\weight.js
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\wwwroot\js\exercises.js
-C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\wwwroot\README.md
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\wwwroot\exercises\pull.html
 wwwroot\.gitattributes
 wwwroot\.gitignore
@@ -52,7 +51,6 @@ wwwroot\js\index.js
 wwwroot\js\registerForm.js
 wwwroot\js\weight.js
 wwwroot\login.html
-wwwroot\README.md
 wwwroot\start.html
 wwwroot\treinings.html
 wwwroot\user\weight.html

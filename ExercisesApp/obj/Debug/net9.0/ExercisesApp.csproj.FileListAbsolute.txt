@@ -516,5 +516,4 @@ C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\obj\Debug\net9.0\compresse
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\obj\Debug\net9.0\compressed\qwocrxpocz-o53fle9r4m.gz
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\obj\Debug\net9.0\compressed\br3y3x5f9y-6hh0ekq69p.gz
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\obj\Debug\net9.0\compressed\srfeqzla9q-11d59bay73.gz
-C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\obj\Debug\net9.0\compressed\wgmyc2v307-x0gn7r987y.gz
 C:\Users\kacpi\source\repos\ExercisesApp\ExercisesApp\obj\Debug\net9.0\compressed\b1f0xkypw7-a0txqnlod2.gz

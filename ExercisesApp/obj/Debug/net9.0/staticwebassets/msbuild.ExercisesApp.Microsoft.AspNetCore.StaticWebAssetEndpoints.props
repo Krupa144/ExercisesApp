@@ -312,18 +312,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-OP2k/ze7w3HGuyhLRDnGfN2nrxQA78mwsTh00iEw2/M="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2275"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022OP2k/ze7w3HGuyhLRDnGfN2nrxQA78mwsTh00iEw2/M=\u0022"},{"Name":"Last-Modified","Value":"Sun, 18 May 2025 11:56:23 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ExercisesApp/README.md">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\README.md'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4fOLapAa649o4Ktjh2O2jF1VyA9w3V1Da0BhJPu6/qc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1518"},{"Name":"Content-Type","Value":"text/markdown"},{"Name":"ETag","Value":"\u00224fOLapAa649o4Ktjh2O2jF1VyA9w3V1Da0BhJPu6/qc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 18 May 2025 11:56:23 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ExercisesApp/README.x0gn7r987y.md">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\README.md'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x0gn7r987y"},{"Name":"integrity","Value":"sha256-4fOLapAa649o4Ktjh2O2jF1VyA9w3V1Da0BhJPu6/qc="},{"Name":"label","Value":"_content/ExercisesApp/README.md"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1518"},{"Name":"Content-Type","Value":"text/markdown"},{"Name":"ETag","Value":"\u00224fOLapAa649o4Ktjh2O2jF1VyA9w3V1Da0BhJPu6/qc=\u0022"},{"Name":"Last-Modified","Value":"Sun, 18 May 2025 11:56:23 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ExercisesApp/start.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\start.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
