@@ -91,12 +91,14 @@ namespace ExercisesApp.Controllers
                 return BadRequest(new { message = "Error occurred during user registration.", errors = result.Errors });
             }
 
+            await _userManager.AddToRoleAsync(user, "User");
+
             var claims = new[]
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Email, user.Email)
-            };
+        new Claim(ClaimTypes.NameIdentifier, user.Id),
+        new Claim(ClaimTypes.Name, user.UserName),
+        new Claim(ClaimTypes.Email, user.Email)
+    };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -117,6 +119,7 @@ namespace ExercisesApp.Controllers
 
             return Ok(new { token = tokenString, userId = user.Id });
         }
+
 
         [HttpGet]
         public IActionResult Test()

@@ -1,5 +1,5 @@
 document.getElementById('registerForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const firstName = document.getElementById('firstName').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -7,7 +7,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     const phoneNumber = document.getElementById('phoneNumber').value.trim();
 
     const messageDiv = document.getElementById('registerMessage');
-    messageDiv.classList.remove('d-none'); 
+    messageDiv.classList.remove('d-none');
     messageDiv.style.color = "red";
 
     if (!firstName || !email || !password || !phoneNumber) {
@@ -43,26 +43,16 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             body: JSON.stringify(registerData)
         });
 
+        const result = await response.json();
+
         if (response.ok) {
             messageDiv.style.color = "green";
-            messageDiv.innerText = "Rejestracja zakończona sukcesem! Przekierowywanie do logowania...";
+            messageDiv.innerText = "Rejestracja zakończona sukcesem! Przekierowywanie...";
             setTimeout(() => {
-                window.location.href = "login.html"; 
+                window.location.href = "login.html";
             }, 2000);
         } else {
-            let errorMessage = "Wystąpił błąd podczas rejestracji.";
-            try {
-                const errorResponse = await response.json();
-                if (errorResponse.errors && Array.isArray(errorResponse.errors)) {
-                    errorMessage = `Błąd: ${errorResponse.errors.join(', ')}`;
-                } else if (errorResponse.message) {
-                    errorMessage = errorResponse.message;
-                }
-            } catch {
-                const rawText = await response.text();
-                if (rawText) errorMessage = rawText;
-            }
-            messageDiv.innerText = errorMessage;
+            messageDiv.innerText = result.message || "Wystąpił błąd podczas rejestracji.";
         }
     } catch (error) {
         console.error("Błąd połączenia:", error);

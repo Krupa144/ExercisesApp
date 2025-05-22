@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "ExercisesApp.Controllers.AdminController",
+    "Method": "AssignRole",
+    "RelativePath": "api/Admin/assign-role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "ExercisesApp.Controllers.RoleAssignmentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ExercisesApp.Controllers.AuthController",
     "Method": "Test",
     "RelativePath": "api/Auth",
