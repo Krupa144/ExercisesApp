@@ -204,17 +204,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"l25d1vdc8a"},{"Name":"integrity","Value":"sha256-E1gU2jxpEoKN51N4xoIo0fbms7\u002B8PE1k8wQQ2qdre2Q="},{"Name":"label","Value":"_content/ExercisesApp/foodJs/foodList.js"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10864"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022E1gU2jxpEoKN51N4xoIo0fbms7\u002B8PE1k8wQQ2qdre2Q=\u0022"},{"Name":"Last-Modified","Value":"Sun, 18 May 2025 11:56:23 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/ExercisesApp/identity.ebwympdmta.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\identity.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ebwympdmta"},{"Name":"integrity","Value":"sha256-GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E="},{"Name":"label","Value":"_content/ExercisesApp/identity.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2417"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E=\u0022"},{"Name":"Last-Modified","Value":"Thu, 22 May 2025 20:45:50 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ExercisesApp/identity.html">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\identity.html'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2076"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 22 May 2025 20:43:27 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/ExercisesApp/identity.xkrntzjwjf.html">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\identity.html'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xkrntzjwjf"},{"Name":"integrity","Value":"sha256-YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc="},{"Name":"label","Value":"_content/ExercisesApp/identity.html"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2076"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 22 May 2025 20:43:27 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2417"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E=\u0022"},{"Name":"Last-Modified","Value":"Thu, 22 May 2025 20:45:50 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/ExercisesApp/js/auth.6hh0ekq69p.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\auth.js'))</AssetFile>

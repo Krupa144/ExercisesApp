@@ -63,6 +63,10 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -81,6 +85,10 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
@@ -88,6 +96,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[8.1.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
             }
           },
           "imports": [

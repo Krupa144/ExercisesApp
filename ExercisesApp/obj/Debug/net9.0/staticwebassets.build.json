@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ROKXI0QVmwAwwYOWFMl1sYWJZFZZAeYAF2tvQAXPKwg=",
+  "Hash": "2M6qd6bI7JwJ17GqzWBCzTtKrZNp3hPyq0MKdFYqG1o=",
   "Source": "ExercisesApp",
   "BasePath": "_content/ExercisesApp",
   "Mode": "Default",
@@ -458,12 +458,12 @@
       "OriginalItemSpec": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\css\\food.css"
     },
     {
-      "Identity": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-xkrntzjwjf.gz",
+      "Identity": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-ebwympdmta.gz",
       "SourceId": "ExercisesApp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/ExercisesApp",
-      "RelativePath": "identity#[.{fingerprint=xkrntzjwjf}]?.html.gz",
+      "RelativePath": "identity#[.{fingerprint=ebwympdmta}]?.html.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -472,8 +472,8 @@
       "RelatedAsset": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\identity.html",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "e1gun5ma9g",
-      "Integrity": "sjf7ZtNmAQBTR7pvTKLJzBcsWV1pNksVxLv6QBZZcfI=",
+      "Fingerprint": "s71p8i7zo9",
+      "Integrity": "aJImhi6dRL817HHGBBxXd6FILEubIdRpnv9NHgw5D9Y=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\identity.html"
@@ -955,8 +955,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xkrntzjwjf",
-      "Integrity": "YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc=",
+      "Fingerprint": "ebwympdmta",
+      "Integrity": "GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\identity.html"
@@ -5829,13 +5829,13 @@
       ]
     },
     {
-      "Route": "identity.html",
-      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-xkrntzjwjf.gz",
+      "Route": "identity.ebwympdmta.html",
+      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-ebwympdmta.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001390820584"
+          "Quality": "0.001377410468"
         }
       ],
       "ResponseHeaders": [
@@ -5845,19 +5845,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "718"
+          "Value": "725"
         },
         {
           "Name": "ETag",
-          "Value": "\"sjf7ZtNmAQBTR7pvTKLJzBcsWV1pNksVxLv6QBZZcfI=\""
+          "Value": "\"aJImhi6dRL817HHGBBxXd6FILEubIdRpnv9NHgw5D9Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 20:43:27 GMT"
+          "Value": "Thu, 22 May 2025 20:45:50 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -5873,18 +5873,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc=\""
+          "Value": "W/\"GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "ebwympdmta"
+        },
+        {
+          "Name": "label",
+          "Value": "identity.html"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc="
+          "Value": "sha256-GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E="
         }
       ]
     },
     {
-      "Route": "identity.html",
+      "Route": "identity.ebwympdmta.html",
       "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\identity.html",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5894,7 +5902,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2076"
+          "Value": "2417"
         },
         {
           "Name": "Content-Type",
@@ -5902,121 +5910,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc=\""
+          "Value": "\"GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 20:43:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc="
-        }
-      ]
-    },
-    {
-      "Route": "identity.html.gz",
-      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-xkrntzjwjf.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "718"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sjf7ZtNmAQBTR7pvTKLJzBcsWV1pNksVxLv6QBZZcfI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 20:43:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-sjf7ZtNmAQBTR7pvTKLJzBcsWV1pNksVxLv6QBZZcfI="
-        }
-      ]
-    },
-    {
-      "Route": "identity.xkrntzjwjf.html",
-      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-xkrntzjwjf.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001390820584"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "718"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sjf7ZtNmAQBTR7pvTKLJzBcsWV1pNksVxLv6QBZZcfI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 20:43:27 GMT"
+          "Value": "Thu, 22 May 2025 20:45:50 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xkrntzjwjf"
+          "Value": "ebwympdmta"
         },
         {
           "Name": "label",
@@ -6024,13 +5932,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc="
+          "Value": "sha256-GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E="
         }
       ]
     },
     {
-      "Route": "identity.xkrntzjwjf.html",
-      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\identity.html",
+      "Route": "identity.ebwympdmta.html.gz",
+      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-ebwympdmta.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -6039,7 +5947,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2076"
+          "Value": "725"
         },
         {
           "Name": "Content-Type",
@@ -6047,56 +5955,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc=\""
+          "Value": "\"aJImhi6dRL817HHGBBxXd6FILEubIdRpnv9NHgw5D9Y=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 20:43:27 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "xkrntzjwjf"
-        },
-        {
-          "Name": "label",
-          "Value": "identity.html"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-YcQBWHVHonZBp6WAVvwi50mCNNb2Qtv69WFZfGAUyOc="
-        }
-      ]
-    },
-    {
-      "Route": "identity.xkrntzjwjf.html.gz",
-      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-xkrntzjwjf.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "718"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"sjf7ZtNmAQBTR7pvTKLJzBcsWV1pNksVxLv6QBZZcfI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 22 May 2025 20:43:27 GMT"
+          "Value": "Thu, 22 May 2025 20:45:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6114,7 +5977,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xkrntzjwjf"
+          "Value": "ebwympdmta"
         },
         {
           "Name": "label",
@@ -6122,7 +5985,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-sjf7ZtNmAQBTR7pvTKLJzBcsWV1pNksVxLv6QBZZcfI="
+          "Value": "sha256-aJImhi6dRL817HHGBBxXd6FILEubIdRpnv9NHgw5D9Y="
+        }
+      ]
+    },
+    {
+      "Route": "identity.html",
+      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-ebwympdmta.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001377410468"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "725"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aJImhi6dRL817HHGBBxXd6FILEubIdRpnv9NHgw5D9Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 May 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E="
+        }
+      ]
+    },
+    {
+      "Route": "identity.html",
+      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\wwwroot\\identity.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2417"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 May 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GgKJFjCmTVNWXVYv0Mp69FVf5rq0mqqMUMRbi7t2D3E="
+        }
+      ]
+    },
+    {
+      "Route": "identity.html.gz",
+      "AssetFile": "C:\\Users\\kacpi\\source\\repos\\ExercisesApp\\ExercisesApp\\obj\\Debug\\net9.0\\compressed\\ntwl5ccrip-ebwympdmta.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "725"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aJImhi6dRL817HHGBBxXd6FILEubIdRpnv9NHgw5D9Y=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 22 May 2025 20:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aJImhi6dRL817HHGBBxXd6FILEubIdRpnv9NHgw5D9Y="
         }
       ]
     },
