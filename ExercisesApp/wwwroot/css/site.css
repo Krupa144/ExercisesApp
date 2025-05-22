@@ -19,7 +19,7 @@
 }
 
 
- body {
+body {
     height: 100%;
     margin: 0;
 }
@@ -36,10 +36,10 @@
 
 
 
-    .stat-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
 
 .list-group-item {
     border-left: none;

@@ -74,7 +74,6 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Lista ćwiczeń */
 #exerciseList .list-group-item {
   border-left: 0;
   border-right: 0;
@@ -121,7 +120,6 @@
   color: white;
 }
 
-/* Nagłówek */
 .site-header {
     background-color: #2c3e50;
     background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
@@ -174,6 +172,17 @@
     justify-content: center;
     padding: 0;
   }
+
+.small-card {
+  max-width: 400px;   
+}
+
+
+
+#macrosChart {
+  width: 100% !important; 
+  height: 350px !important;
+}
 
   .card {
     border-radius: 12px;
