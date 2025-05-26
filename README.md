@@ -43,8 +43,7 @@
 - **EF**
 - **Identity**
 - **Razor**
--- **RestApi**  
----
+- **RestApi**  
 
 ## 🌐 External API
 
