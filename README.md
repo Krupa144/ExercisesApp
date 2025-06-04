@@ -35,7 +35,7 @@
 ## 🧰 Tools Used
 
 - **ASP.NET Core Identity** 
-- **Postman** 
+- **Postman (API testing)** 
 - **Visual Studio Code** 
 - **Docker Compose** 
 - **Git & GitHub**
